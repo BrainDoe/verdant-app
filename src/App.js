@@ -1,24 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import Header from './components/layouts/Header'
+import Footer from './components/layouts/Footer'
+import Slider from './components/layouts/Slider'
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import './css/App.css';
+import Groceries from './components/products/Groceries';
+import { Container } from 'react-bootstrap';
 
-function App() {
+
+const  App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Header />
+      <main>
+        <Route path="/" component={Slider} exact />
+        <Container>
+          <Route path="/products/groceries" component={Groceries} />
+        </Container>
+      </main>
+      <Footer />
+    </Router>
   );
 }
 

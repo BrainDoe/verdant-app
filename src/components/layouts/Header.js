@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Navbar, Nav, NavDropdown, Dropdown, DropdownButton } from 'react-bootstrap';
+import { Container, Navbar, Nav, NavDropdown, Dropdown, DropdownButton, Image } from 'react-bootstrap';
 import image from "../images/logo.PNG"
 import { CartFill } from 'react-bootstrap-icons';
 import { LinkContainer } from 'react-router-bootstrap';
@@ -9,8 +9,11 @@ const Header = () => {
     <header>
       <Navbar className="py-2 shadow-sm" expand="lg">
         <Container>
-        <Navbar.Brand href="/" className="fs-2 nav-bar-text text-primary"> 
-          <img src={image} style={{ width: '50px' }} alt="Brand Logo" /> Verdant Digital</Navbar.Brand>
+          <LinkContainer to="/">
+            <Navbar.Brand className="fs-2 nav-bar-text text-primary"> 
+              <Image src={image} style={{ width: '50px' }} alt="Brand Logo" /> Verdant Digital
+            </Navbar.Brand>
+          </LinkContainer>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ml-auto">
@@ -18,10 +21,19 @@ const Header = () => {
             <Nav.Link href="#link" className="fs-7 fw-bold mr-3 text-dark ">About Us</Nav.Link>
             <NavDropdown className="fs-7 fw-bold mr-3 text-dark color" title="Products" id="basic-nav-dropdown">
               <LinkContainer to="/products/groceries">           
-                <NavDropdown.Item className="fs-7 text-dark navlink">Product 1</NavDropdown.Item>
-              </LinkContainer>
-              <NavDropdown.Item href="#" className="fs-7 text-dark">Product 2</NavDropdown.Item>
-              <NavDropdown.Item href="#" className="fs-7 text-dark">Product 3</NavDropdown.Item>
+                <NavDropdown.Item className="fs-7 text-dark navlink h5">Groceries</NavDropdown.Item>
+                </LinkContainer>
+                {/* Bill Payment Link */}
+                 <LinkContainer to="/products/billPayment">           
+                  <NavDropdown.Item className=" fs-7 text-dark navlink text-primary h5">
+                    Bills Payment
+                  </NavDropdown.Item>
+                </LinkContainer>
+                <LinkContainer to="/products/invoiceUpload">           
+                  <NavDropdown.Item className=" fs-7 text-dark navlink text-primary h5">
+                    Invoice Upload
+                  </NavDropdown.Item>
+                </LinkContainer>
               <NavDropdown.Item href="#" className="fs-7 text-dark">Product 4</NavDropdown.Item>
             </NavDropdown>
             <NavDropdown className="fs-7 fw-bold mr-3 text-dark color" title="Help" id="basic-nav-dropdown">

@@ -38,3 +38,39 @@ main {
   padding: 8px 15px;
   font-size: 10px;
   border-radius: 5px; }
+
+
+/* Bill Payment Section */
+  .grid-element {
+   display: grid;
+   grid-template-columns: repeat(5, 1fr);
+   margin: 0 auto;
+   gap: 2px;
+
+  }
+
+.formControl input[type="text"], .formControl select  {
+    background-color: #E5E5E5;   
+}
+
+/* Footer */
+footer{
+  background-image: linear-gradient(to bottom right, rgba(55, 133, 247, 0.1), rgba(55, 133, 247, 0)),
+   url('../components/images/Footer.png');
+  background-size: cover;
+  width: 100%;
+  background-position: center;
+}
+
+@media (max-width: 786px) {
+  .grid-element {
+     grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+
+
+  
+
+
+

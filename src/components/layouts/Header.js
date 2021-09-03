@@ -4,7 +4,6 @@ import image from "../images/logo.PNG"
 import { CartFill } from 'react-bootstrap-icons';
 import { LinkContainer } from 'react-router-bootstrap';
 
-
 const Header = () => {
   return (
     <header>

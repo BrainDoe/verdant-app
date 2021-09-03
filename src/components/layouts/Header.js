@@ -3,7 +3,6 @@ import { Container, Navbar, Nav, NavDropdown, Dropdown, DropdownButton } from 'r
 import image from "../images/logo.PNG"
 import { CartFill } from 'react-bootstrap-icons';
 import { LinkContainer } from 'react-router-bootstrap';
-import Groceries from '../products/Groceries';
 
 const Header = () => {
   return (

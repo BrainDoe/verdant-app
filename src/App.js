@@ -3,7 +3,7 @@ import Footer from './components/layouts/Footer'
 import Slider from './components/layouts/Slider'
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import './css/App.css';
-import Groceries from './components/products/Groceries';
+import Groceries from './components/products/groceries/Groceries';
 import { Container } from 'react-bootstrap';
 
 

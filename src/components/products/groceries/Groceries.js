@@ -5,6 +5,7 @@ import image3 from '../../images/groceries-image/item3.png'
 import image4 from '../../images/groceries-image/item4.png'
 import image5 from '../../images/groceries-image/item5.png'
 import { Col, Row, DropdownButton, Dropdown, Card, Nav } from 'react-bootstrap'
+import { LinkContainer } from 'react-router-bootstrap';
 import { ChevronRight, HeartFill, Heart } from 'react-bootstrap-icons'
 import Accordion  from './Accordion';
 
@@ -86,21 +87,25 @@ const Groceries = () => {
               <Row>
                 <Col sm={12} md={4}>
                   <Card className="m-4 bg-white">
-                    <div className="py-3 px-3 bg-white">
-                      <img src={image1} alt="Grocery Item"  className="card-img" alt="Grocery Item" />
-                      <div className="mt-3">
-                        <div className="d-flex justify-between">
-                          <p className="card-title">Corn Flakes</p>
-                          <span className="ml-auto">
-                            <HeartFill size={25} className="text-warning"></HeartFill>
-                          </span>
+                    <LinkContainer to="/groceries/item">
+                      <a className="text-decoration-none">
+                        <div className="py-3 px-3 bg-white">
+                          <img src={image1} alt="Grocery Item"  className="card-img" alt="Grocery Item" />
+                          <div className="mt-3">
+                            <div className="d-flex justify-between">
+                              <p className="card-title">Corn Flakes</p>
+                              <span className="ml-auto">
+                                <HeartFill size={25} className="text-warning"></HeartFill>
+                              </span>
+                            </div>
+                            <div className="card-text">
+                              <h5>N 1,000</h5>
+                            </div>
+                            <button type="submit" className="btn btn-block btn-outline-primary">Add To Cart</button>
+                          </div>
                         </div>
-                        <div className="card-text">
-                          <h5>N 1,000</h5>
-                        </div>
-                        <button type="submit" className="btn btn-block btn-outline-primary">Add To Cart</button>
-                      </div>
-                    </div>
+                      </a>
+                    </LinkContainer>
                   </Card>
                 </Col>
                 <Col sm={12} md={4}>

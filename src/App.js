@@ -4,6 +4,7 @@ import Slider from './components/layouts/Slider'
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import './css/App.css';
 import Groceries from './components/products/groceries/Groceries';
+import GroceryDetail from './components/products/groceries/GroceryDetail';
 import { Container } from 'react-bootstrap';
 
 
@@ -15,6 +16,8 @@ const  App = () => {
         <Route path="/" component={Slider} exact />
         <Container>
           <Route path="/products/groceries" component={Groceries} />
+          <Route path="/groceries/item" component={GroceryDetail} />
+          {/* <GroceryDetail /> */}
         </Container>
       </main>
       <Footer />

@@ -148,3 +148,37 @@ footer{
 .accordion-content {
   padding: 1em 0; 
 }
+
+/* Increament And Decreament Button */
+.inc-wrapper {
+  padding: 0px 5px;
+  border: 1px solid #3785f7;
+  border-radius: 5px;
+  max-width: 130px;
+  display: flex;
+  text-align: center;
+}
+
+.inc-wrapper button, .inc-wrapper span {
+  padding: 0px 5px;
+  outline: none;
+  border: 0;
+  appearance: none;
+  background-color: #fff;
+}
+
+.inc-wrapper .minus-btn {
+  border-right: 1px solid #3785f7;
+  flex: 1;
+  cursor: pointer;
+}
+
+.inc-wrapper .item-number {
+  flex: 1;
+}
+
+.inc-wrapper .plus-btn {
+  border-left: 1px solid #3785f7;
+  flex: 1;
+  cursor: pointer;
+}

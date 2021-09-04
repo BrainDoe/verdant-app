@@ -9,6 +9,7 @@ import GroceryDetail from './components/products/groceries/GroceryDetail';
 import { Container } from 'react-bootstrap';
 import CryptoPayment from './components/products/billsPayment/CryptoPayment';
 import InvoiceUpload from './components/products/invoiceUpload/InvoiceUpload';
+import Checkout from './components/products/checkout/Checkout';
 
 
 const  App = () => {
@@ -27,6 +28,7 @@ const  App = () => {
           <Route path="/products/billPayment" component={ BillPayments } />
           <Route path="/products/billPayment/crypto" component={ CryptoPayment } />
           <Route path="/products/invoiceUpload" component={ InvoiceUpload } />
+          <Route path="/products/checkout" component={ Checkout } />
 
         </Container>
       </main>

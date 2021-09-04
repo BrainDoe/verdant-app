@@ -34,7 +34,12 @@ const Header = () => {
                     Invoice Upload
                   </NavDropdown.Item>
                 </LinkContainer>
-              <NavDropdown.Item href="#" className="fs-7 text-dark">Product 4</NavDropdown.Item>
+                <LinkContainer to="/products/checkout">           
+                  <NavDropdown.Item className=" fs-7 text-dark navlink text-primary h5">
+                    Checkout
+                  </NavDropdown.Item>
+                </LinkContainer>
+
             </NavDropdown>
             <NavDropdown className="fs-7 fw-bold mr-3 text-dark color" title="Help" id="basic-nav-dropdown">
               <NavDropdown.Item href="#action/3.1" className="fs-7 text-dark navlink">Action</NavDropdown.Item>

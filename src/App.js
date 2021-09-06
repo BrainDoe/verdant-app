@@ -12,6 +12,7 @@ import InvoiceUpload from './components/products/invoiceUpload/InvoiceUpload';
 import Checkout from './components/products/checkout/Checkout';
 
 
+
 const  App = () => {
   return (
     <Router>
@@ -21,10 +22,8 @@ const  App = () => {
         <Container>
 
           <Route path="/products/groceries" component={Groceries} />
-          <Route path="/groceries/item" component={GroceryDetail} />
-          {/* <GroceryDetail /> */}
+          <Route path="/groceries/:id" component={GroceryDetail} />
 
-          <Route path="/products/groceries" component={ Groceries } />
           <Route path="/products/billPayment" component={ BillPayments } />
           <Route path="/products/billPayment/crypto" component={ CryptoPayment } />
           <Route path="/products/invoiceUpload" component={ InvoiceUpload } />

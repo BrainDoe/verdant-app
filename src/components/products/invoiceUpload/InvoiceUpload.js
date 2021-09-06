@@ -83,8 +83,7 @@ const InvoiceUpload = () => {
         <hr />
          <Row  className="ml-2 py-2">
           <Col sm={12} md={12} lg={12}>
-            <h5 className="pt-2">Step 3: Select Payment Type</h5>
-            
+            <h5 className="pt-2">Step 3: Select Payment Type</h5>          
           </Col>
         </Row>
         <Form>

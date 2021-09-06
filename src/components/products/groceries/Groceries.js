@@ -1,20 +1,34 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import image1 from '../../images/groceries-image/item1.png'
 import image2 from '../../images/groceries-image/grocery-banner.png'
 import image3 from '../../images/groceries-image/item3.png'
 import image4 from '../../images/groceries-image/item4.png'
 import image5 from '../../images/groceries-image/item5.png'
 import { Col, Row, DropdownButton, Dropdown, Card, Nav } from 'react-bootstrap'
-import { LinkContainer } from 'react-router-bootstrap';
 import { ChevronRight, HeartFill, Heart } from 'react-bootstrap-icons'
 import Accordion  from './Accordion';
+import axios from 'axios'
+import GroceryProduct from './GroceryProduct'
 
 const Groceries = () => {
+  const [products, setProduct] = useState([])
+  useEffect(() => {
+    const fetchProducts = async () => {
+      const {data} = await axios.get('https://verdant-store.herokuapp.com/product/catalog');
+      setProduct(data.products);
+     
+    };
+
+    fetchProducts();
+  }, []);
+
+
+
   return (
     <div className="py-4">
       <Row>
         <Col sm={12} md={12} lg={12} className="py-3">
-          <h6>Products <ChevronRight></ChevronRight> <span className="text-primary">Groceries</span></h6>
+          <h6 style={{ fontSize: '16px', fontWeight: '400' }}>Products <ChevronRight></ChevronRight> <span className="text-primary" style={{ fontSize: '18px', fontWeight: '500' }}>Groceries</span></h6>
         </Col>
       </Row>
       <Row>
@@ -25,40 +39,55 @@ const Groceries = () => {
         </Col>
       </Row>
 
-      {/* /Product->Category->Grocery->Items */}
+      
       <section className="p-3 my-5">
       <Row>
-        <Col md={3}>
+        <Col md={3} className="px-0">
           <Card className="mb-5">
-            <Accordion title="Category">
+            <Accordion title="Category" style={{ fontSize: '20px', fontWeight: '500' }}>
               <Card.Body>
                 <Nav defaultActiveKey="/" className="flex-column footer-nav">
-                  <Nav.Link href="/home" className="fs-6 fw-bold text-dark">Beverages and Cereals </Nav.Link>
-                  <Nav.Link href="#" className="text-secondary">Rice, Pasta, Noodles</Nav.Link>
-                  <Nav.Link href="#" className="text-secondary">Yam</Nav.Link>
-                  <Nav.Link href="#" className="text-secondary">Beans</Nav.Link>
-                  <Nav.Link href="#" className="text-secondary">Fruits and Juices</Nav.Link>
-                  <Nav.Link href="#" className="text-secondary">Processed</Nav.Link>
+                  <Nav.Link href="#" className="text-dark" style={{ fontSize: '16px', fontWeight: '400' }}>Beverages and Cereals </Nav.Link>
+                  <Nav.Link href="#" className="text-dark" style={{ fontSize: '16px', fontWeight: '400' }}>Rice, Pasta, Noodles</Nav.Link>
+                  <Nav.Link href="#" className="text-dark" style={{ fontSize: '16px', fontWeight: '400' }}>Yam</Nav.Link>
+                  <Nav.Link href="#" className="text-dark" style={{ fontSize: '16px', fontWeight: '400' }}>Beans</Nav.Link>
+                  <Nav.Link href="#" className="text-dark" style={{ fontSize: '16px', fontWeight: '400' }}>Fruits and Juices</Nav.Link>
+                  <Nav.Link href="#" className="text-dark" style={{ fontSize: '16px', fontWeight: '400' }}>Processed</Nav.Link>
                 </Nav>
               </Card.Body>
             </Accordion>
           </Card>
 
           <Card>
-            <Accordion title="New Products">
+            <Accordion title="New Products" style={{ fontSize: '20px', fontWeight: '500' }}>
               <Card.Body>
                 <Nav defaultActiveKey="/" className="flex-column footer-nav">
-                  <Nav.Link href="/home" className="fs-6 fw-bold text-dark">
-                    <img src={image3} alt="New Item Image" className="img-fluid" />
-                    <span className="ml-2">Tuber of Yam</span> 
+                  <Nav.Link href="/home" className="text-dark">
+                    <div className="d-flex">
+                      <img src={image3} alt="New Item Image" className="img-fluid" />
+                      <div className="my-auto ml-2">
+                        <span className="text-dark" style={{ fontSize: '16px', fontWeight: '500' }}>Tuber of Yam</span>
+                        <p className="text-dark" style={{ fontSize: '16px', fontWeight: '400' }}>N 1,000</p> 
+                      </div>
+                    </div>
                   </Nav.Link>
-                  <Nav.Link href="/home" className="fs-6 fw-bold text-dark">
-                    <img src={image4} alt="New Item Image" className="img-fluid" />
-                    <span className="ml-2">Tuber of Yam</span> 
+                  <Nav.Link href="/home" className="text-dark">
+                    <div className="d-flex">
+                      <img src={image4} alt="New Item Image" className="img-fluid" />
+                      <div className="my-auto ml-2">
+                        <span className="text-dark" style={{ fontSize: '16px', fontWeight: '500' }}>Beans per derica</span>
+                        <p className="text-dark" style={{ fontSize: '16px', fontWeight: '400' }}>N 1,000</p> 
+                      </div>
+                    </div> 
                   </Nav.Link>
-                  <Nav.Link href="/home" className="fs-6 fw-bold text-dark">
+                  <Nav.Link href="/home" className="text-dark">
+                  <div className="d-flex">
                     <img src={image5} alt="New Item Image" className="img-fluid" />
-                    <span className="ml-2">Tuber of Yam</span> 
+                    <div className="my-auto ml-2">
+                      <span className="text-dark" style={{ fontSize: '16px', fontWeight: '500' }}>Rice, Pasta, Noodles </span>
+                      <p className="text-dark" style={{ fontSize: '16px', fontWeight: '400' }}>N 1,000</p> 
+                    </div>
+                  </div> 
                   </Nav.Link>
                 </Nav>
               </Card.Body>
@@ -67,86 +96,36 @@ const Groceries = () => {
             
         </Col>
 
-        <Col md={9}>
+        {/* /Product->Category->Grocery->Items */}
+        <Col md={9} className="pr-0">
           <Card>
-            <div className="d-flex justify-between pt-3 px-2">
-              <div>
-                <h5>Beverage and Cereals</h5>
-              </div>
+            <Row>
+              <Col md={6} sm={6}>        
+                <div>
+                  <h5 className="text-dark" style={{ fontSize: '18px', fontWeight: '500' }}>Beverage and Cereals</h5>
+                </div>
+              </Col>
+              <Col md={6} sm={6}>
+                <div className="ml-auto">
+                  <span style={{fontSize: '14px', fontWeight: '400' }}>Sort By:</span>
+                  <DropdownButton id="dropdown-basic-button" title="New Products" className="ms-4 sort-btn" style={{ fontSize: '12px', fontWeight: '400' }}>
+                    <Dropdown.Item href="#/action-1" className="text-dark navlink" style={{ fontSize: '12px', fontWeight: '500' }}>New Products</Dropdown.Item>
+                    <Dropdown.Item href="#/action-1" className="text-dark navlink" style={{ fontSize: '12px', fontWeight: '400' }}>Price - Low to High</Dropdown.Item>
+                    <Dropdown.Item href="#/action-2" className="text-dark navlink" style={{ fontSize: '12px', fontWeight: '400' }}>Price - High to Low</Dropdown.Item>
+                  </DropdownButton>
+                </div>
+              </Col>
+            </Row>
 
-              <div className="ml-auto" style={{ position: 'relative' }}>
-                <span style={{position: 'absolute', top: '5px', left: '-80px'}}>Sort By:</span>
-                <DropdownButton id="dropdown-basic-button" title="New Products" className="ms-4 sort-btn">
-                  <Dropdown.Item href="#/action-1" className="h6 text-dark navlink">New Products</Dropdown.Item>
-                  <Dropdown.Item href="#/action-1" className="h6 text-dark navlink">Price - Low to High</Dropdown.Item>
-                  <Dropdown.Item href="#/action-2" className="h6 text-dark navlink">Price - High to Low</Dropdown.Item>
-                </DropdownButton>
-              </div>
-            </div>
             <hr />
-              <Row>
-                <Col sm={12} md={4}>
-                  <Card className="m-4 bg-white">
-                    <LinkContainer to="/groceries/item">
-                      <a className="text-decoration-none">
-                        <div className="py-3 px-3 bg-white">
-                          <img src={image1} alt="Grocery Item"  className="card-img" alt="Grocery Item" />
-                          <div className="mt-3">
-                            <div className="d-flex justify-between">
-                              <p className="card-title">Corn Flakes</p>
-                              <span className="ml-auto">
-                                <HeartFill size={25} className="text-warning"></HeartFill>
-                              </span>
-                            </div>
-                            <div className="card-text">
-                              <h5>N 1,000</h5>
-                            </div>
-                            <button type="submit" className="btn btn-block btn-outline-primary">Add To Cart</button>
-                          </div>
-                        </div>
-                      </a>
-                    </LinkContainer>
-                  </Card>
+
+            <Row>
+              {products.map(product =>(
+                <Col sm={12} md={6} lg={4} key={product.id}> 
+                    <GroceryProduct product={product} key={product.id}/>
                 </Col>
-                <Col sm={12} md={4}>
-                  <Card className="m-4 bg-white">
-                    <div className="py-3 px-3 bg-white">
-                      <img src={image1} alt="Grocery Item"  className="card-img" alt="Grocery Item" />
-                      <div className="mt-3">
-                        <div className="d-flex justify-between">
-                          <p className="card-title">Corn Flakes</p>
-                          <span className="ml-auto">
-                            <Heart size={25} className="text-warning"></Heart>
-                          </span>
-                        </div>
-                        <div className="card-text">
-                          <h5>N 1,000</h5>
-                        </div>
-                        <button type="submit" className="btn btn-block btn-outline-primary">Add To Cart</button>
-                      </div>
-                    </div>
-                  </Card>
-                </Col>
-                <Col sm={12} md={4}>
-                  <Card className="m-4 bg-white">
-                    <div className="py-3 px-3 bg-white">
-                      <img src={image1} alt="Grocery Item"  className="card-img" alt="Grocery Item" />
-                      <div className="mt-3">
-                        <div className="d-flex justify-between">
-                          <p className="card-title">Corn Flakes</p>
-                          <span className="ml-auto">
-                            <HeartFill size={25} className="text-warning"></HeartFill>
-                          </span>
-                        </div>
-                        <div className="card-text">
-                          <h5>N 1,000</h5>
-                        </div>   
-                        <button type="submit" className="btn btn-block btn-outline-primary">Add To Cart</button>
-                      </div>
-                    </div>
-                  </Card>
-                </Col>
-              </Row>
+              ))}             
+            </Row>
           </Card>
         </Col>
       </Row>

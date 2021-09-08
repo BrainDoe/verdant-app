@@ -89,7 +89,7 @@ const Checkout = () => {
               </Row>
               <Row>
             <Col sm={12} md={4} lg={4} className="mx-auto">
-                <button className="btn btn-primary btn-block" style={{ fontSize: '18px', fontWeight: '500', lineHeight: '26.44px' }}>Pay Now</button>
+              <button className="btn btn-primary btn-block" style={{ fontSize: '18px', fontWeight: '500', lineHeight: '26.44px' }}>Pay Now</button>
             </Col>
           </Row>
         </Form>

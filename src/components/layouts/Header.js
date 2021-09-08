@@ -46,10 +46,13 @@ const Header = () => {
               <NavDropdown.Item href="#" className="text-dark navlink"  style={{ fontSize: '12px', fontWeight: '400' }}>FAQ</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.2" className="text-dark"   style={{ fontSize: '12px', fontWeight: '400' }}>Another action</NavDropdown.Item>
             </NavDropdown>
-            <Nav.Link href="#link" className="mr-3 text-dark" style={{ fontSize: '18px', fontWeight: '400' }}>
-              Cart  
-              <CartFill className="ml-2" size={20} style={{ fontSize: '7px', fontWeight: '500' }} />
-            </Nav.Link>
+            <LinkContainer to="/products/cart">
+              {/*  style={{ fontSize: '12px', fontWeight: '400' }} */}
+              <Nav.Link className="mr-3 text-dark" style={{ fontSize: '18px', fontWeight: '400' }}>
+                Cart  
+                <CartFill className="ml-2" size={20} style={{ fontSize: '7px', fontWeight: '500' }} />
+              </Nav.Link>
+            </LinkContainer>
 
             <DropdownButton id="dropdown-basic-button" title="Account" className="ms-4 dropdown-btn" style={{ fontSize: '18px', fontWeight: '500' }}>
               <Dropdown.Item href="#" className="text-dark navlink" style={{ fontSize: '12px', fontWeight: '400' }}>Login</Dropdown.Item>

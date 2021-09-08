@@ -6,10 +6,10 @@ import { ChevronRight } from 'react-bootstrap-icons';
 const InvoiceUpload = () => {
   return (
     <div>
-         <Row>
-          <Col sm={12} md={12} lg={12} className="py-3">
-            <h6 style={{ fontSize: '18px', fontWeight: '400' }}>Home <ChevronRight /> <span className="text-primary" style={{ fontSize: '18px', fontWeight: '500' }}>Invoice Upload</span></h6>
-          </Col>
+      <Row>
+        <Col sm={12} md={12} lg={12} className="py-3">
+          <h6 style={{ fontSize: '18px', fontWeight: '400' }}>Home <ChevronRight /> <span className="text-primary" style={{ fontSize: '18px', fontWeight: '500' }}>Invoice Upload</span></h6>
+        </Col>
       </Row>
         <Row>
          <Col sm={12} md={12} lg={12}>

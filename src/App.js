@@ -6,6 +6,7 @@ import './css/App.css';
 import BillPayments from './components/products/billsPayment/BillPayments';
 import Groceries from './components/products/groceries/Groceries';
 import GroceryDetail from './components/products/groceries/GroceryDetail';
+import Cart from './components/products/groceries/Cart';
 import { Container } from 'react-bootstrap';
 import CryptoPayment from './components/products/billsPayment/CryptoPayment';
 import InvoiceUpload from './components/products/invoiceUpload/InvoiceUpload';
@@ -23,6 +24,7 @@ const  App = () => {
 
           <Route path="/products/groceries" component={Groceries} />
           <Route path="/groceries/:id" component={GroceryDetail} />
+          <Route path="/products/cart" component={Cart} />
 
           <Route path="/products/billPayment" component={ BillPayments } />
           <Route path="/products/billPayment/crypto" component={ CryptoPayment } />

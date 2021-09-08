@@ -7,7 +7,7 @@ const CryptoCheckout = () => {
         <Row>
           <Col sm={12} md={6} lg={6}>
             <Form.Group className="mb-3 formControl" controlId="formBasicEmail">
-              <Form.Label>Crypto Currency <span className="text-danger">*</span></Form.Label>
+              <Form.Label style={{ fontSize: '18px', fontWeight: '400' }}>Crypto Currency <span className="text-danger">*</span></Form.Label>
                 <select class="form-control" name="" id="">
                   <option selected>Select Crytocurrent</option>
                   <option value="1">USDT</option>
@@ -18,7 +18,7 @@ const CryptoCheckout = () => {
           </Col>
           <Col sm={12} md={6} lg={6}>
             <Form.Group className="mb-3 formControl" controlId="formBasicEmail">
-              <Form.Label>Exchange Rate <span className="text-danger">*</span></Form.Label>
+              <Form.Label style={{ fontSize: '18px', fontWeight: '400' }}>Exchange Rate <span className="text-danger">*</span></Form.Label>
               <Form.Control type="text" placeholder="Exchange Rate" />
             </Form.Group>
           </Col>

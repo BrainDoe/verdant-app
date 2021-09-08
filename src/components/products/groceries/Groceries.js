@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react'
+import React, { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 import image1 from '../../images/groceries-image/item1.png'
 import image2 from '../../images/groceries-image/grocery-banner.png'
 import image3 from '../../images/groceries-image/item3.png'
@@ -7,21 +8,28 @@ import image5 from '../../images/groceries-image/item5.png'
 import { Col, Row, DropdownButton, Dropdown, Card, Nav } from 'react-bootstrap'
 import { ChevronRight, HeartFill, Heart } from 'react-bootstrap-icons'
 import Accordion  from './Accordion';
-import axios from 'axios'
+// import axios from 'axios'
 import GroceryProduct from './GroceryProduct'
+import { listProducts } from '../../../actions/productActions'
+import Loader from './Loader'
+import Message from './Message'
 
 const Groceries = () => {
-  const [products, setProduct] = useState([])
+  const dispatch = useDispatch()
+  const productList = useSelector(state => state.productList)
+  const {loading, error, products} = productList 
+
+  // const [products, setProduct] = useState([])
+
   useEffect(() => {
-    const fetchProducts = async () => {
-      const {data} = await axios.get('https://verdant-store.herokuapp.com/product/catalog');
-      setProduct(data.products);
-     
-    };
+    // const fetchProducts = async () => {
+    //   const {data} = await axios.get('https://verdant-store.herokuapp.com/product/catalog');
+    //   setProduct(data.products);
+    // };
+    // fetchProducts();
 
-    fetchProducts();
-  }, []);
-
+    dispatch(listProducts())
+  }, [dispatch]);
 
 
   return (
@@ -119,13 +127,17 @@ const Groceries = () => {
 
             <hr />
 
-            <Row>
-              {products.map(product =>(
-                <Col sm={12} md={6} lg={4} key={product.id}> 
+            {loading ? <Loader /> : error ? <Message variant="danger">{error} </Message> : (
+
+              <Row>
+                {products.map(product => (
+                  <Col sm={12} md={6} lg={4} key={product.id}> 
                     <GroceryProduct product={product} key={product.id}/>
-                </Col>
-              ))}             
-            </Row>
+                  </Col>
+                ))}             
+              </Row>
+            )}
+
           </Card>
         </Col>
       </Row>

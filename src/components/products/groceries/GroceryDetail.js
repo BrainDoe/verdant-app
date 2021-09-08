@@ -1,11 +1,24 @@
-import React from 'react'
+import React, { useEffect} from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 import item1lg from '../../images/groceries-image/item-lg.png'
 import image1 from '../../images/groceries-image/item1.png'
 import { Col, Row, Card } from 'react-bootstrap'
 import { ChevronRight, Facebook, Twitter, Linkedin, Cursor, Heart, HeartFill } from 'react-bootstrap-icons'
 import { LinkContainer } from 'react-router-bootstrap'
+import { listProductDetails } from '../../../actions/productActions'
 
-const GroceryDetail = () => {
+const GroceryDetail = ({ match }) => {
+  const dispatch = useDispatch()
+
+  const productDetails = useSelector(state => state.productDetails)
+  const { loading, error, product } = productDetails
+
+  useEffect(() => {
+    dispatch(listProductDetails(match.params.id))
+  }, [dispatch, match])
+
+  // const product = {}
+
   return (
     <div className="py-4">
       <Row>

@@ -48,7 +48,7 @@ const Header = () => {
             </NavDropdown>
             <Nav.Link href="#link" className="mr-3 text-dark" style={{ fontSize: '18px', fontWeight: '400' }}>
               Cart  
-              <CartFill className="ml-2" size={25} style={{ fontSize: '7px', fontWeight: '500' }} />
+              <CartFill className="ml-2" size={20} style={{ fontSize: '7px', fontWeight: '500' }} />
             </Nav.Link>
 
             <DropdownButton id="dropdown-basic-button" title="Account" className="ms-4 dropdown-btn" style={{ fontSize: '18px', fontWeight: '500' }}>

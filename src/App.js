@@ -11,6 +11,8 @@ import { Container } from 'react-bootstrap';
 import CryptoPayment from './components/products/billsPayment/CryptoPayment';
 import InvoiceUpload from './components/products/invoiceUpload/InvoiceUpload';
 import Checkout from './components/products/checkout/Checkout';
+import Section from './components/layouts/section/Section';
+import About from './components/layouts/About';
 
 
 
@@ -18,13 +20,13 @@ const  App = () => {
   return (
     <Router>
       <Header />
+      <Route path="/" component={Slider} exact />
       <main>
-        <Route path="/" component={Slider} exact />
         <Container>
-
+          <Route path="/" component={Section} exact />
           <Route path="/products/groceries" component={Groceries} />
           <Route path="/groceries/:id" component={GroceryDetail} />
-          <Route path="/products/cart" component={Cart} />
+          <Route path="/cart/:id?" component={Cart} />
 
           <Route path="/products/billPayment" component={ BillPayments } />
           <Route path="/products/billPayment/crypto" component={ CryptoPayment } />
@@ -32,6 +34,7 @@ const  App = () => {
           <Route path="/products/checkout" component={ Checkout } />
 
         </Container>
+        <Route path="/about"  component={About}/>
       </main>
       <Footer />
     </Router>

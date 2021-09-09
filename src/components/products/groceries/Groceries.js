@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import image1 from '../../images/groceries-image/item1.png'
 import image2 from '../../images/groceries-image/grocery-banner.png'
@@ -15,6 +15,8 @@ import Loader from './Loader'
 import Message from './Message'
 
 const Groceries = () => {
+  const [qty, setQty ] = useState(0)
+
   const dispatch = useDispatch()
   const productList = useSelector(state => state.productList)
   const {loading, error, products} = productList 
@@ -108,15 +110,15 @@ const Groceries = () => {
         <Col md={9} className="pr-0">
           <Card>
             <Row>
-              <Col md={6} sm={6}>        
-                <div>
+              <Col md={6} sm={12}>        
+                <div className="pt-4 mx-4">
                   <h5 className="text-dark" style={{ fontSize: '18px', fontWeight: '500' }}>Beverage and Cereals</h5>
                 </div>
               </Col>
-              <Col md={6} sm={6}>
-                <div className="ml-auto">
-                  <span style={{fontSize: '14px', fontWeight: '400' }}>Sort By:</span>
-                  <DropdownButton id="dropdown-basic-button" title="New Products" className="ms-4 sort-btn" style={{ fontSize: '12px', fontWeight: '400' }}>
+              <Col md={6} sm={12}>
+                <div className="pt-4 mx-4 d-flex align-items-center justify-content-center">
+                  <span style={{fontSize: '14px', fontWeight: '400', marginRight: '10px' }}>Sort By:</span>
+                  <DropdownButton id="dropdown-basic-button" title="New Products" className="ms-4 sorted-btn" id="sorted-btn" style={{ fontSize: '12px', fontWeight: '400', backgroundColor: '#C4C4C436' }}>
                     <Dropdown.Item href="#/action-1" className="text-dark navlink" style={{ fontSize: '12px', fontWeight: '500' }}>New Products</Dropdown.Item>
                     <Dropdown.Item href="#/action-1" className="text-dark navlink" style={{ fontSize: '12px', fontWeight: '400' }}>Price - Low to High</Dropdown.Item>
                     <Dropdown.Item href="#/action-2" className="text-dark navlink" style={{ fontSize: '12px', fontWeight: '400' }}>Price - High to Low</Dropdown.Item>

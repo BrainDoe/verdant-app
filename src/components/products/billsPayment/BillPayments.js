@@ -8,7 +8,7 @@ const BillPayments = () => {
   return (
     <>
       <CardPayment />
-      <CryptoPayment />
+      {/* <CryptoPayment /> */}
     </>
   )
 }

@@ -11,14 +11,14 @@ const GroceryProduct = ({product}) => {
         <div className="py-3 px-3 bg-white">
         <LinkContainer to={`/groceries/${product.id}`}>
           <a className="text-decoration-none">
-              <img src={image1} alt="Grocery Item"  className="card-img" alt="Grocery Item" />
+              <img src={image1} alt="Grocery Item"  className="img-thumbnail" alt="Grocery Item" />
           </a>
         </LinkContainer>
           <div className="mt-3">
             <div className="d-flex justify-between">
             <LinkContainer to={`/groceries/${product.id}`}>
               <a className="text-decoration-none">
-                <p className="card-title text-dark" style={{ fontSize: '16px', fontWeight: '400' }}>{product.name}</p>
+                <p className="card-title text-dark" style={{ fontSize: '16px', fontWeight: '400' }}>{product.title}</p>
               </a>
             </LinkContainer>
               <span className="ml-auto">
@@ -26,7 +26,7 @@ const GroceryProduct = ({product}) => {
               </span>
             </div>
             <div className="card-text text-dark">
-              <h5 style={{ fontSize: '18px', fontWeight: '500' }}>${product.cost}</h5>
+              <h5 style={{ fontSize: '18px', fontWeight: '500' }}>${product.price}</h5>
             </div>
             <button type="submit" className="btn btn-block btn-outline-primary" style={{ fontSize: '14px', fontWeight: '500' }}>Add To Cart</button>
           </div>

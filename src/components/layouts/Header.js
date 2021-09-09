@@ -18,7 +18,9 @@ const Header = () => {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ml-auto">
             <Nav.Link href="/" className="mr-3 text-dark color"  style={{ fontSize: '18px', fontWeight: '400' }}>How It Works</Nav.Link>
-            <Nav.Link href="#link" className="mr-3 text-dark" style={{ fontSize: '18px', fontWeight: '400' }}>About Us</Nav.Link>
+            <LinkContainer to="/about"  style={{ fontSize: '18px', fontWeight: '400' }}> 
+              <Nav.Link  className="mr-3 text-dark">About Us</Nav.Link>
+            </LinkContainer>
             <NavDropdown className="mr-3 text-dark color" title="Products" id="basic-nav-dropdown" style={{ fontSize: '18px', fontWeight: '400' }}>
               <LinkContainer to="/products/groceries"  style={{ fontSize: '12px', fontWeight: '400' }}>           
                 <NavDropdown.Item className="text-dark navlink">Groceries</NavDropdown.Item>
@@ -46,9 +48,10 @@ const Header = () => {
               <NavDropdown.Item href="#" className="text-dark navlink"  style={{ fontSize: '12px', fontWeight: '400' }}>FAQ</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.2" className="text-dark"   style={{ fontSize: '12px', fontWeight: '400' }}>Another action</NavDropdown.Item>
             </NavDropdown>
-            <LinkContainer to="/products/cart">
+
+            <LinkContainer to="/cart" style={{ fontSize: '18px', fontWeight: '400' }}>
               {/*  style={{ fontSize: '12px', fontWeight: '400' }} */}
-              <Nav.Link className="mr-3 text-dark" style={{ fontSize: '18px', fontWeight: '400' }}>
+              <Nav.Link className="mr-3 text-dark">
                 Cart  
                 <CartFill className="ml-2" size={20} style={{ fontSize: '7px', fontWeight: '500' }} />
               </Nav.Link>

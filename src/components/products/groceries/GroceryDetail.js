@@ -64,7 +64,7 @@ const GroceryDetail = ({ history, match }) => {
                             <span style={{ fontSize: '18px', fontWeight: '400' }}>Quantity</span>
                           </div>
                             <div className="inc-wrapper mb-4 flex-fill">
-                              <button type="button" className="minus-btn" onClick={() => setQty(qty--)}>&#8722;</button>
+                              <button type="button" className="minus-btn" onClick={() => setQty(qty > 1 ? qty--: 1)}>&#8722;</button>
                               <span className="item-number">{qty}</span>
                               <button type="button" className="plus-btn" onClick={() => setQty(qty++)}>&#43;</button>
                             </div>

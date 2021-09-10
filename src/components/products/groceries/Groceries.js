@@ -107,7 +107,7 @@ const Groceries = () => {
         </Col>
 
         {/* /Product->Category->Grocery->Items */}
-        <Col md={9} className="pr-0">
+        <Col md={9} className="px-0 groceries-container">
           <Card>
             <Row>
               <Col md={6} sm={12}>        

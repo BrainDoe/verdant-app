@@ -655,8 +655,14 @@ text-align: center;
 }
 
 .about-belief, .text-location {
-text-align: center;
+  text-align: center;
 }
+
+  /* Groceries item and Category card container */
+  .groceries-container {
+    margin: 2rem 0;
+    /* padding-left: 0px; */
+  }
 
 }
 

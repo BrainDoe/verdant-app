@@ -58,8 +58,12 @@ const Header = () => {
             </LinkContainer>
 
             <DropdownButton id="dropdown-basic-button" title="Account" className="ms-4 dropdown-btn" style={{ fontSize: '18px', fontWeight: '500' }}>
-              <Dropdown.Item href="#" className="text-dark navlink" style={{ fontSize: '12px', fontWeight: '400' }}>Login</Dropdown.Item>
-              <Dropdown.Item href="#" className="text-dark navlink" style={{ fontSize: '12px', fontWeight: '400' }}>Sign Up</Dropdown.Item>
+              <LinkContainer to="/login">
+                <Dropdown.Item className="text-dark navlink" style={{ fontSize: '12px', fontWeight: '400' }}>Login</Dropdown.Item>
+              </LinkContainer>
+              <LinkContainer to="/signup">
+                <Dropdown.Item className="text-dark navlink" style={{ fontSize: '12px', fontWeight: '400' }}>Signup</Dropdown.Item>
+              </LinkContainer>
             </DropdownButton>
           </Nav>
         </Navbar.Collapse>

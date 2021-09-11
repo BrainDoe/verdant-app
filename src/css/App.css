@@ -1,3 +1,10 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
 body {
   font-family: 'Heebo', sans-serif !important; 
 }
@@ -664,5 +671,177 @@ text-align: center;
     /* padding-left: 0px; */
   }
 
+}
+
+/* Login Page */
+.container-login {
+  width: 100%;
+  display: flex;
+}
+
+.container-login .left{ 
+  flex: 1 1 50%;
+  width: 50%;
+  padding: 100px 0;
+  background-color: #fff;
+}
+
+.container-login .right{ 
+  flex: 1 1 50%;
+  width: 50%;
+}
+
+.login-form {
+  width: 351px;
+  margin: 0 auto;
+}
+
+.form-group {
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 24.21px;
+  color: #181818
+}
+
+.form-group input {
+  border: 1px solid #3785F724;
+  height: 51px;
+  width: 100%;
+  background-color: #f4f4f4;
+  font-family: 'heebo' sans-serif;
+  border-radius: 3px;
+  padding: 0 10px;
+  transition: border 0.5 ease;
+}
+
+.form-group input:hover {
+  border: 1px solid #3785f7;
+}
+
+.form-group input:focus {
+  border: 1px solid rgba(55, 133, 247, 0.14);
+}
+
+.form-group .eye {
+  position: absolute;
+  top: 50px;
+  right: 20px;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.form-group input[type=checkbox] {
+  width: 15px;
+  height: 15px;
+  border-radius: 3px;
+  display: inline-block;
+  margin-right: 11px;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+
+#checkbox-label {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 400;
+  margin-top: 0px;
+  margin-right: 143px;
+}
+
+.form-group a {
+  margin-right: auto;
+  font-size: 12px;
+  font-weight: 400;
+  color: #F6C54C;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.form-group input[type=submit] {
+  border: 1px solid #3785F724;
+  height: 54px;
+  width: 100%;
+  background-color: #3785f7;
+  color: #fff;
+  font-family: 'heebo' sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  border-radius: 5px;
+  padding: 0 10px;
+  margin-bottom: 15px;
+  transition: transform 0.5 ease;
+}
+
+/* .form-group input[type=submit]:hover {
+  border: 2px solid #3785f7;
+  transform: scale(0.95);
+} */
+
+.or-container {
+  display: flex;
+  position: relative;
+}
+
+.or-container .left-line {
+  width: 45%;
+  height: 1px;
+  background-color: #495057;
+  position: absolute;
+  top: 5px;
+  left: 0;
+}
+.or-container span {
+  display: inline-block;
+  margin: 0 30px;
+  position: absolute;
+  left: 40%;
+  top: -7px;
+}
+.or-container .right-line {
+  width: 45%;
+  height: 1px;
+  background-color: #495057;
+  position: absolute;
+  top: 5px;
+  right: 0;
+}
+
+.google {
+  background-color: #fff;
+  color: #212429;;
+  height: 54px;
+  width: 100%;
+  font-family: 'heebo' sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  border-radius: 5px;
+  margin-top: 45px;
+  border: 1px solid #3785f7;
+  padding: 13px 37%;
+  cursor: pointer;
+}
+
+.google img{
+  margin-right: 5px;
+}
+
+.no-account {
+  font-size: 18px;
+  font-weight: 500;
+  margin-top: 150px
+}
+
+.no-account a {
+  display: inline-block;
+  text-decoration: none;
+  margin-left: 10px;
+  font-size: 18px;
+  font-weight: 500;
 }
 

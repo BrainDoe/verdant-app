@@ -13,6 +13,8 @@ import InvoiceUpload from './components/products/invoiceUpload/InvoiceUpload';
 import Checkout from './components/products/checkout/Checkout';
 import Section from './components/layouts/section/Section';
 import About from './components/layouts/About';
+import Login from './components/Login';
+import Signup from './components/Signup';
 
 
 
@@ -35,8 +37,13 @@ const  App = () => {
 
         </Container>
         <Route path="/about"  component={About}/>
+        <Route path="/login" component={Login}/>
+        <Route path="/signup" component={Signup}/>
       </main>
       <Footer />
+
+      {/* <Route path="/login" component={Login} exact />
+      <Route path="/signup" component={Signup} exact /> */}
     </Router>
   );
 }

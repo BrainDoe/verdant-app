@@ -119,9 +119,9 @@ const Groceries = () => {
                 <div className="pt-4 mx-4 d-flex align-items-center justify-content-center">
                   <span style={{fontSize: '14px', fontWeight: '400', marginRight: '10px' }}>Sort By:</span>
                   <DropdownButton id="dropdown-basic-button" title="New Products" className="ms-4 sorted-btn" id="sorted-btn" style={{ fontSize: '12px', fontWeight: '400', backgroundColor: '#C4C4C436' }}>
-                    <Dropdown.Item href="#/action-1" className="text-dark navlink" style={{ fontSize: '12px', fontWeight: '500' }}>New Products</Dropdown.Item>
-                    <Dropdown.Item href="#/action-1" className="text-dark navlink" style={{ fontSize: '12px', fontWeight: '400' }}>Price - Low to High</Dropdown.Item>
-                    <Dropdown.Item href="#/action-2" className="text-dark navlink" style={{ fontSize: '12px', fontWeight: '400' }}>Price - High to Low</Dropdown.Item>
+                    <Dropdown.Item href="#" className="text-dark navlink" style={{ fontSize: '12px', fontWeight: '500' }}>New Products</Dropdown.Item>
+                    <Dropdown.Item href="#" className="text-dark navlink" style={{ fontSize: '12px', fontWeight: '400' }}>Price - Low to High</Dropdown.Item>
+                    <Dropdown.Item href="#" className="text-dark navlink" style={{ fontSize: '12px', fontWeight: '400' }}>Price - High to Low</Dropdown.Item>
                   </DropdownButton>
                 </div>
               </Col>

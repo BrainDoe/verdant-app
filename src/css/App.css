@@ -671,7 +671,14 @@ text-align: center;
     /* padding-left: 0px; */
   }
 
+  /* Remove the image on the Signup and Login pages */
+  .container-login .right{ 
+    display: none;
+  }
+
 }
+
+
 
 /* Login Page */
 .container-login {

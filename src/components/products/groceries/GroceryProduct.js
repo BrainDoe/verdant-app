@@ -11,7 +11,9 @@ const GroceryProduct = ({product}) => {
         <div className="py-3 px-3 bg-white">
         <LinkContainer to={`/groceries/${product.id}`}>
           <a className="text-decoration-none">
-            <img src={image1} alt="Grocery Item"  className="img-thumbnail" alt="Grocery Item" />
+            <div>
+              <img src={image1} alt="Grocery Item"  className="img-fluid" alt="Grocery Item" />
+            </div>
           </a>
         </LinkContainer>
           <div className="mt-3">

@@ -696,6 +696,7 @@ text-align: center;
 .container-login .right{ 
   flex: 1 1 50%;
   width: 50%;
+  overflow-x: hidden;
 }
 
 .login-form {

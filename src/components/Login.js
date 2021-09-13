@@ -3,7 +3,7 @@ import { Row, Col, Card, Form } from 'react-bootstrap'
 import { LinkContainer, Link } from 'react-router-bootstrap'
 import { Google } from 'react-bootstrap-icons'
 import Logo from './images/logo.PNG'
-import loginBarner from './images/login-img.png'
+import loginBarner from './images/login-barner.png'
 import eye from './images/eye.png'
 import googleIcon from './images/google-icon.png'
 
@@ -56,7 +56,9 @@ const Login = () => {
               <div className="mt-5"></div>
               
               <button className="btn btn-outline-primary p-3 btn-block">
-                <img src={googleIcon} alt="Google Icon" className="mr-1" />
+                <div>  
+                  <img src={googleIcon} alt="Google Icon" className="mr-1 img-fluid" />
+                </div>
                 Google
               </button>
 

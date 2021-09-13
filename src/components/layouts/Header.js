@@ -43,10 +43,19 @@ const Header = () => {
                 </LinkContainer>
 
             </NavDropdown>
+
             <NavDropdown className="mr-3 text-dark color" title="Help" id="basic-nav-dropdown" style={{ fontSize: '18px', fontWeight: '400' }}>
-              <NavDropdown.Item href="#" className="text-dark navlink"  style={{ fontSize: '12px', fontWeight: '400' }}>FAQ1</NavDropdown.Item>
-              <NavDropdown.Item href="#" className="text-dark navlink"  style={{ fontSize: '12px', fontWeight: '400' }}>FAQ</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2" className="text-dark"   style={{ fontSize: '12px', fontWeight: '400' }}>Another action</NavDropdown.Item>
+              <LinkContainer to="/help/faq" style={{ fontSize: '18px', fontWeight: '400' }}>
+                <NavDropdown.Item className="text-dark navlink"  style={{ fontSize: '12px', fontWeight: '400' }}>
+                  FAQs
+                </NavDropdown.Item>
+              </LinkContainer>
+              <LinkContainer to="/help/contact" style={{ fontSize: '18px', fontWeight: '400' }}>
+                <NavDropdown.Item className="text-dark navlink"  style={{ fontSize: '12px', fontWeight: '400' }}>
+                  Contact Us
+                </NavDropdown.Item>
+              </LinkContainer>
+              
             </NavDropdown>
 
             <LinkContainer to="/cart" style={{ fontSize: '18px', fontWeight: '400' }}>

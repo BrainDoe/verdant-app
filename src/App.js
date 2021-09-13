@@ -15,6 +15,8 @@ import Section from './components/layouts/section/Section';
 import About from './components/layouts/About';
 import Login from './components/Login';
 import Signup from './components/Signup';
+import FAQ from './components/FAQ';
+import Contact from './components/Contact';
 
 
 
@@ -34,6 +36,8 @@ const  App = () => {
           <Route path="/products/billPayment/crypto" component={ CryptoPayment } />
           <Route path="/products/invoiceUpload" component={ InvoiceUpload } />
           <Route path="/products/checkout" component={ Checkout } />
+          <Route path="/help/faq" component={FAQ}/>
+          <Route path="/help/contact" component={Contact}/>
 
         </Container>
         <Route path="/about"  component={About}/>

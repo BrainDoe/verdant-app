@@ -32,8 +32,8 @@ const Signup = () => {
             </div>
             <form action="" className="form">
               <div className="form-group">
-                <label htmlFor="email">Full Name</label>
-                <input className="email" type="email" id="email" placeholder="Full Name" />
+                <label htmlFor="full-name">Full Name</label>
+                <input className="full-name" type="text" id="full-name" placeholder="Full Name" />
               </div>
               <div className="form-group">
                 <label htmlFor="email">Email Address</label>

@@ -52,7 +52,7 @@ const Groceries = () => {
       
       <section className="p-3 my-5">
       <Row>
-        <Col md={3} className="px-0">
+        <Col md={3} className="pr-4">
           <Card className="mb-5">
             <Accordion title="Category" style={{ fontSize: '20px', fontWeight: '500' }}>
               <Card.Body>

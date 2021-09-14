@@ -2,6 +2,7 @@ import OurProduct from './OurProduct';
 import WhoWeAre from './WhoWeAre'
 import OurSolution from './OurSolution'
 import HowItWorks from './HowItWorks';
+import { Route } from 'react-router-dom';
 
 const Section = () => {
   return (
@@ -10,7 +11,7 @@ const Section = () => {
       <WhoWeAre />
       </div>
       <div className="py-5">
-      <OurProduct />
+        <OurProduct />
       </div>
       <div className="py-5">
         <OurSolution />

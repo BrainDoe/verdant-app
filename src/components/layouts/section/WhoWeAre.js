@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 
 const WhoWeAre = () => {
   return (
-    <div>
+    <>
       <Row>
         <Col sm={12} md={12} lg={12}>
              <h5 style={wraper}>WHO WE ARE</h5>
@@ -45,7 +45,7 @@ const WhoWeAre = () => {
           </LinkContainer>
         </Col>
       </Row>
-    </div>
+    </>
   )
 }
 

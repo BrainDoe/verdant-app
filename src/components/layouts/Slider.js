@@ -7,7 +7,7 @@ import {Link} from 'react-router-dom'
 
 const Slider = () => {
   return (
-    <>
+    <div style={{ backgroundColor: 'rgba(235, 249, 250, 0.14)'}}>
        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
           <ol class="carousel-indicators">
             <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -77,8 +77,8 @@ const Slider = () => {
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="sr-only">Next</span>
           </a>
-</div>
-    </>
+      </div>
+    </div>
   );
 };
 

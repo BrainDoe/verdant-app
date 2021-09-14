@@ -5,7 +5,7 @@ import faqImg from './images/FAQ-barner.png'
 
 const FAQ = () => {
   return (
-    <div>
+    <div className="py-4">
       <Row>
         <Col sm={12} md={12} lg={12} className="py-3">
           <h6 style={{ fontSize: '16px', fontWeight: '400' }}>Home <ChevronRight></ChevronRight> <span className="text-primary" style={{ fontSize: '18px', fontWeight: '500' }}>FAQs</span></h6>

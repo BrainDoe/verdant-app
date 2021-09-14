@@ -7,10 +7,23 @@
 
 body {
   font-family: 'Heebo', sans-serif !important; 
+  background-color: '#E5E5E5' !important;
+  height: 11px !important;
 }
 
 .nav-bar-text {
   font-weight: 500; }
+
+  
+
+.carousel-indicators li {
+  border-radius: 100% !important;
+  width: 11px !important;
+}
+
+.carousel-indicators .active {
+  background-color: #3785f7 !important;
+}
 
 .color a {
   color: #000 !important; }
@@ -72,19 +85,7 @@ main {
   background-color: #C4C4C436 !important;
 }
 
-/* #dropdown-basic-button.dropdown-toggle::after {
-  color: #121212 !important;
-  
-  display: inline-block;
-  margin-left: 0.255em;
-  margin-top: 3px;
-  vertical-align: 0.255em;
-  content: "";
-  border-top: 0.25em solid;
-  border-right: 0.25em solid transparent;
-  border-bottom: 0;
-  border-left: 0.25em solid transparent;
-} */
+
 
 .sorted-btn button::after {
   color: #121212 !important;
@@ -110,14 +111,7 @@ main {
     background-color: #E5E5E5;   
 }
 
-/* Footer */
-/* footer{
-  background-image: linear-gradient(to bottom right, rgba(55, 133, 247, 0.1), rgba(55, 133, 247, 0)),
-   url('../components/images/Footer.png');
-  background-size: cover;
-  width: 100%;
-  background-position: center;
-} */
+
 
 
 .wrapper {
@@ -258,37 +252,56 @@ gap: 1rem;
 
 .grid-item  .item1 {
 background-image: 
-linear-gradient(0deg, rgba(9, 51, 113, 0.74),
+linear-gradient(0deg, rgba(50, 92, 156, 0.74),
  rgba(9, 51, 113, 0.74)),
  url('../components/images/goods.png');
 box-shadow: 3px 21px 40px rgba(187, 206, 235, 0.53);
 border-radius: 0px 40px;
-/* transform: matrix(-1, 0, 0, 1, 0, 0); */
+background-size: cover;
+background-position: center;
+transition: 0.35s;
 }
 .grid-item  .item2 {
 background-image: 
 linear-gradient(0deg, rgba(9, 51, 113, 0.74),
  rgba(9, 51, 113, 0.74)),
 url('../components/images/medical.png');
+background-size: cover;
+background-position: center;
 box-shadow: 3px 21px 40px rgba(187, 206, 235, 0.53);
 border-radius: 0px 40px;
+transition: 0.35s;
 }
 .grid-item  .item3 {
 background-image:
  linear-gradient(0deg, rgba(9, 51, 113, 0.74),
  rgba(9, 51, 113, 0.74)),
  url('../components/images/billPayment.png');
+ background-size: cover;
+background-position: center;
 box-shadow: 3px 21px 40px rgba(187, 206, 235, 0.53);
 border-radius: 0px 40px;
+transition: 0.35s;
 }
 .grid-item  .item4 {
 background-image: 
 linear-gradient(0deg, rgba(9, 51, 113, 0.74),
  rgba(9, 51, 113, 0.74)),
  url('../components/images/invoicePayment.png');
+ background-size: cover;
+background-position: center;
 box-shadow: 3px 21px 40px rgba(187, 206, 235, 0.53);
 border-radius: 0px 40px;
+transition: 0.35s;
 }
+
+.grid-item  .item1:hover,
+ .grid-item  .item2:hover,
+  .grid-item  .item3:hover, 
+  .grid-item  .item4:hover {
+  transform: scale(1.1);
+}
+
 
 /* Our Solution */
 .solution1 {

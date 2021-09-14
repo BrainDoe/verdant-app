@@ -1,11 +1,13 @@
 import React from 'react'
 import { Row, Col } from 'react-bootstrap';
 import Image from '../../images/slug.png'
+import { Link } from 'react-router-bootstrap';
 
 
 const OurProduct = () => {
   return (
-    <Row className="py-5">
+    <>
+      <Row className="py-5">
       <Col sm={12} md={6} lg={6}>
         <h5 className="ourProduct">Our Product</h5>
         <div>
@@ -17,36 +19,34 @@ const OurProduct = () => {
       </Col>
       <Col sm={12} md={6} lg={6} className="mx-auto">
         <div className="grid-item">
-          <div className="item1" style={items}>
-            <div className="">
-              <h5 style={itemText}>Groceries</h5>
+          <a href="/products/groceries">
+              <div className="item1" style={items}>
+                  <h6 style={itemText}>Groceries</h6>
+              </div>
+            </a>
+            <a href="/products/groceries">
+              <div className="item2" style={items}>
+                <h6 style={itemText}>Medical</h6>
+              </div>
+            </a>
+            <a href="/products/groceries">
+              <div className="item3" style={items}>
+                  <h6 style={itemText}>Bill Payment</h6>
+             </div>
+            </a>
+            <a href="/products/groceries">
+              <div className="item4" style={items}>
+                <h6 style={itemText}>Invoice Upload</h6>
             </div>
-          </div>
-          <div className="item2" style={items}>
-            <h6 style={itemText}>Medical</h6>
-          </div>
-          <div className="item3" style={items}>
-            <h6 style={itemText}>Bill Payment</h6>
-          </div>
-          <div className="item4" style={items}>
-            <h6 style={itemText}>Invoice Upload</h6>
-          </div>
+          </a>
         </div>
       </Col>
     </Row>
+    </>
   )
 }
 
 
-// const wraper = {
-//     fontFamily: 'Heebo',
-//     fontStyle: 'normal',
-//     fontWeight:' 500',
-//     fontSize: '36px',
-//     lineHeight: '173.5%',
-//     color: '#3785F7',
-//     padding: '4rem 0'
-// }
 
 const imageStyle = {
   position: 'absolute',

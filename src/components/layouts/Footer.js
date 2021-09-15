@@ -20,22 +20,22 @@ const Footer = () => {
         <Col xs={6} md={ 3 } lg={ 3 }  className="mb-3">
             <Nav defaultActiveKey="/home" className="flex-column footer-nav">
               <Nav.Link href="/home" className="text-dark" style={{ fontWeight:'bold'}}>Business</Nav.Link>
-              <Nav.Link href="#" className="text-secondary navLink">Payments</Nav.Link>
-              <Nav.Link href="#" className="text-secondary navLink">Billing</Nav.Link>
-              <Nav.Link href="#" className="text-secondary navLink">Retail</Nav.Link>
-              <Nav.Link href="#" className="text-secondary navLink">Pricing</Nav.Link>
-              <Nav.Link href="#" className="text-secondary navLink">Exchange Rates</Nav.Link>
-              <Nav.Link href="#" className="text-secondary navLink">FAQ</Nav.Link>
+              <Nav.Link href="#" className="navLink">Payments</Nav.Link>
+              <Nav.Link href="#" className="navLink">Billing</Nav.Link>
+              <Nav.Link href="#" className="navLink">Retail</Nav.Link>
+              <Nav.Link href="#" className="navLink">Pricing</Nav.Link>
+              <Nav.Link href="#" className="navLink">Exchange Rates</Nav.Link>
+              <Nav.Link href="#" className="navLink">FAQ</Nav.Link>
             </Nav>
           </Col>  
           <Col xs={6} md={ 3 } lg={ 3 }  className="mb-3">
             <Nav defaultActiveKey="/home" className="flex-column footer-nav">
               <Nav.Link href="/home" className="text-dark" style={{ fontWeight:'bold'}}>Developers</Nav.Link>
-              <Nav.Link href="#" className="text-secondary navLink">Docs</Nav.Link>
-              <Nav.Link href="#" className="text-secondary navLink">Insight</Nav.Link>
-              <Nav.Link href="#" className="text-secondary navLink">Open Source</Nav.Link>
-              <Nav.Link href="#" className="text-secondary navLink">PGP Keys</Nav.Link>
-              <Nav.Link href="#" className="text-secondary navLink">Integrations</Nav.Link>
+              <Nav.Link href="#" className="navLink">Docs</Nav.Link>
+              <Nav.Link href="#" className="navLink">Insight</Nav.Link>
+              <Nav.Link href="#" className="navLink">Open Source</Nav.Link>
+              <Nav.Link href="#" className="navLink">PGP Keys</Nav.Link>
+              <Nav.Link href="#" className="navLink">Integrations</Nav.Link>
             </Nav>
           </Col>
           <Col xs={6} md={ 3 } lg={ 3 }  className="mb-3">
@@ -56,7 +56,7 @@ const Footer = () => {
           </Col>
           <Col xs={6} md={ 3 } lg={ 3 } className="mb-3">
             <h6 className="text-dark" style={{ fontWeight: 'bold' }}>Get Latest Deals</h6>
-            <p className="text-secondary navLink">Our best promotions sent to your inbox.</p>
+            <p className="navLink">Our best promotions sent to your inbox.</p>
             <input type="text" className="form-control" placeholder="Email Address" style={typrography} />
             <button className="btn btn-footer">Subscribe</button>
           </Col>

@@ -8,25 +8,25 @@ const OurSolution = () => {
   const [showInfo3, setShowInfo3] = useState(false)
   const [showInfo4, setShowInfo4] = useState(false)
 
-    useEffect(() => {
-      if (showInfo1) {
-          setShowInfo2(false)
-          setShowInfo3(false)
-          setShowInfo4(false)
-      } else if (showInfo2) {
-          setShowInfo1(false)
-          setShowInfo3(false)
-          setShowInfo4(false)
-      } else if(showInfo3) {
-          setShowInfo1(false)
-          setShowInfo2(false)
-          setShowInfo4(false)
-      } else if(showInfo4) {
-           setShowInfo1(false)
-          setShowInfo2(false)
-          setShowInfo3(false)
-        }
-     }, [showInfo1, showInfo2, showInfo3, showInfo4])
+    // useEffect(() => {
+    //   if (showInfo1) {
+    //       setShowInfo2(false)
+    //       setShowInfo3(false)
+    //       setShowInfo4(false)
+    //   } else if (showInfo2) {
+    //       setShowInfo1(false)
+    //       setShowInfo3(false)
+    //       setShowInfo4(false)
+    //   } else if(showInfo3) {
+    //       setShowInfo1(false)
+    //       setShowInfo2(false)
+    //       setShowInfo4(false)
+    //   } else if(showInfo4) {
+    //        setShowInfo1(false)
+    //       setShowInfo2(false)
+    //       setShowInfo3(false)
+    //     }
+    //  }, [showInfo1, showInfo2, showInfo3, showInfo4])
 
   return (
     <>

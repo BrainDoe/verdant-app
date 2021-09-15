@@ -383,8 +383,16 @@ transform: matrix(-1, 0, 0, 1, 0, 0);
  font-family: 'Heebo';
 font-style: 'normal';
 font-weight: 'normal';
-font-size: 25px;
+font-size: 20px;
 line-height: 140%;
+}
+
+.para-card {
+ font-family: 'Heebo';
+font-style: 'normal';
+font-weight: 'normal';
+font-size: 20px;
+line-height: 120%;
 }
 
 
@@ -413,6 +421,16 @@ font-family: 'Heebo';
 font-style: normal;
 font-weight: 500;
 font-size: 36px;
+line-height: 173.38%;
+color: #3785F7;
+/* padding: 4rem 0; */
+}
+
+.send-money {
+font-family: 'Heebo';
+font-style: normal;
+font-weight: 500;
+font-size: 30px;
 line-height: 173.38%;
 color: #3785F7;
 /* padding: 4rem 0; */

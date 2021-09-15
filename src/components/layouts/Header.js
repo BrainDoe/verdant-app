@@ -22,7 +22,7 @@ const Header = () => {
         <Container>
           <LinkContainer to="/">
             <Navbar.Brand className="text-primary"> 
-              <Image src={image} style={{ width: '50px' }} alt="Brand Logo" /> <span style={{ fontSize: '21.43px', fontWeight: '700' }}> Verdant Digital</span>
+              <Image src={image} style={{ width: '50px' }} alt="Brand Logo" /> <span style={{ fontSize: '21.43px', fontWeight: '700' }}> BL Digital</span>
             </Navbar.Brand>
           </LinkContainer>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />

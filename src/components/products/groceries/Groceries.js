@@ -108,7 +108,7 @@ const Groceries = () => {
 
         {/* /Product->Category->Grocery->Items */}
         <Col md={9} className="px-0 groceries-container">
-          <Card>
+          <Card className="pb-5">
             <Row>
               <Col md={6} sm={12}>        
                 <div className="pt-4 mx-4">
@@ -133,7 +133,7 @@ const Groceries = () => {
 
               <Row>
                 {products.map(product => (
-                  <Col sm={12} md={6} lg={4} key={product.id}> 
+                  <Col sm={12} md={6} lg={4} key={product.id} className="mb-3">
                     <GroceryProduct product={product} key={product.id}/>
                   </Col>
                 ))}             

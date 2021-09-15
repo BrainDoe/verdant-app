@@ -15,7 +15,13 @@ const OurProduct = () => {
         </div>
         <div style={overlay}>
             <img src={Image} alt="" style={imageStyle}/>
+          </div>
+          <div className="card card-body rounded border-0 mb-3">
+            <h5 className="send-money">Send Money</h5>
+        <div className="mb-3">
+            <p className="para-card">We can send money to 32 african countries</p>
         </div>
+          </div>
       </Col>
       <Col sm={12} md={6} lg={6} className="mx-auto">
         <div className="grid-item">

@@ -24,7 +24,7 @@ const WhoWeAre = () => {
             </div>
             <p className="para" style={{ marginLeft: '1rem' }}>
               "Our duty is not to fight the 
-              disruption, but to embrace it."
+              disruption, <br /> but to embrace it."
             </p>
           </div>
         </Col>

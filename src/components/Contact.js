@@ -1,5 +1,4 @@
 import React from 'react'
-import { Row, Col, Card, Form } from 'react-bootstrap'
 import underline from './images/underline.png'
 import contactImg1 from './images/contact-img1.png'
 import contactImg2 from './images/contact-img2.png'
@@ -47,14 +46,14 @@ const Contact = () => {
         <div className="right">
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', marginTop: '100px' }}>
               <div className="pl-3">
-                <img src={contactImg1} alt="Contact Image 1" />
+                <img src={contactImg1} alt="Contact US photo 1" />
               </div>
               <div>
                 <div style={{ marginLeft: '-30px' }}>
-                  <img src={contactImg2} alt="Contact Image 2" />
+                  <img src={contactImg2} alt="Contact US photo 2" />
                 </div>
                 <div style={{ marginLeft: '-60px' }}>
-                  <img src={contactImg3} alt="Contact Image 3" />
+                  <img src={contactImg3} alt="Contact US photo 3" />
                 </div>
               </div>
             </div>

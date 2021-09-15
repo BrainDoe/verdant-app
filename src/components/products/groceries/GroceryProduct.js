@@ -1,28 +1,24 @@
 import React from 'react'
 import { Card } from 'react-bootstrap'
-import { LinkContainer } from 'react-router-bootstrap'
-import { Heart, HeartFill } from 'react-bootstrap-icons'
+import { Heart} from 'react-bootstrap-icons'
 import image1 from '../../images/groceries-image/item1.png'
+import { Link } from 'react-router-dom';
 
 const GroceryProduct = ({product}) => {
   return (
     <>
-      <Card className="m-4 bg-white" style={{ width: '207', height: '185', borderRadius: '3px' }}>
+      <Card className="bg-white" style={{ borderRadius: '3px', width: '257px'}}>
         <div className="py-3 px-3 bg-white">
-        <LinkContainer to={`/groceries/${product.id}`}>
-          <a className="text-decoration-none">
+          <Link to={`/groceries/${product.id}`} className="text-decoration-none">
             <div>
-              <img src={image1} alt="Grocery Item"  className="img-fluid" alt="Grocery Item" />
+              <img src={image1}  className="card-img" alt="Grocery Item" />
             </div>
-          </a>
-        </LinkContainer>
-          <div className="mt-3">
+          </Link>
+          <div className="card-body">
             <div className="d-flex justify-between">
-            <LinkContainer to={`/groceries/${product.id}`}>
-              <a className="text-decoration-none">
+              <Link  to={`/groceries/${product.id}`} className="text-decoration-none">
                 <p className="card-title text-dark" style={{ fontSize: '16px', fontWeight: '400' }}>{product.title}</p>
-              </a>
-            </LinkContainer>
+              </Link>
               <span className="ml-auto">
                 <Heart size={25} className="text-warning" style={{ cursor: 'pointer' }}></Heart>  
               </span>

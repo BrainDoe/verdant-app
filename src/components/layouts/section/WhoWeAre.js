@@ -22,7 +22,7 @@ const WhoWeAre = () => {
               <div style={blue}>
               </div>
             </div>
-            <p className="para">
+            <p className="para" style={{ marginLeft: '1rem' }}>
               "Our duty is not to fight the 
               disruption, but to embrace it."
             </p>
@@ -63,14 +63,14 @@ const wraper = {
 const yello = {
  backgroundColor: '#F6C54C',
   width: '1px',
-  height: '36px',
+  height: '30px',
   border: '2px solid #F6C54C',
 }
 
 const blue = {
   backgroundColor: '#3785F7',
   width: '1px',
-  height: '36px',
+  height: '30px',
   border: '2px solid #3785F7',
 }
 

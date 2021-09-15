@@ -13,7 +13,7 @@ export const listProducts = () => async (dispatch) => {
   try {
     dispatch({type: PRODUCT_LIST_REQUEST})
 
-    const { data } = await axios.get('https://fakestoreapi.com/products')
+    const { data } = await axios.get('https://fakestoreapi.com/products?limit=6')
 
     dispatch({
       type: PRODUCT_LIST_SUCCESS,

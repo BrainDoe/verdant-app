@@ -17,7 +17,7 @@ const Footer = () => {
       <hr />
       <Container>
         <Row className="pt-3">
-        <Col xs={6} md={ 3 } lg={ 3 }>
+        <Col xs={6} md={ 3 } lg={ 3 }  className="mb-3">
             <Nav defaultActiveKey="/home" className="flex-column footer-nav">
               <Nav.Link href="/home" className="text-dark" style={{ fontWeight:'bold'}}>Business</Nav.Link>
               <Nav.Link href="#" className="text-secondary navLink">Payments</Nav.Link>
@@ -28,17 +28,7 @@ const Footer = () => {
               <Nav.Link href="#" className="text-secondary navLink">FAQ</Nav.Link>
             </Nav>
           </Col>  
-          <Col xs={6} md={ 3 } lg={ 3 }>
-            <Nav defaultActiveKey="/home" className="flex-column footer-nav">
-              <Nav.Link href="/home" className=" text-dark" style={{ fontWeight:'bold'}}>Personal</Nav.Link>
-              <Nav.Link href="#" className="text-secondary navLink">Card</Nav.Link>
-              <Nav.Link href="#" className="text-secondary navLink">Card FAQ</Nav.Link>
-              <Nav.Link href="#" className="text-secondary navLink">Wallet</Nav.Link>
-              <Nav.Link href="#" className="text-secondary navLink">Wallet FAQ</Nav.Link>
-              <Nav.Link href="#" className="text-secondary navLink">Extention</Nav.Link>
-            </Nav>
-          </Col>
-          <Col xs={6} md={ 3 } lg={ 3 }>
+          <Col xs={6} md={ 3 } lg={ 3 }  className="mb-3">
             <Nav defaultActiveKey="/home" className="flex-column footer-nav">
               <Nav.Link href="/home" className="text-dark" style={{ fontWeight:'bold'}}>Developers</Nav.Link>
               <Nav.Link href="#" className="text-secondary navLink">Docs</Nav.Link>
@@ -48,26 +38,44 @@ const Footer = () => {
               <Nav.Link href="#" className="text-secondary navLink">Integrations</Nav.Link>
             </Nav>
           </Col>
-          <Col xs={6} md={ 3 } lg={ 3 }>
+          <Col xs={6} md={ 3 } lg={ 3 }  className="mb-3">
             <Nav defaultActiveKey="/home" className="flex-column footer-nav">
               <Nav.Link href="/home" className="text-dark" style={{ fontWeight:'bold'}}>Company</Nav.Link>
-              <Nav.Link href="#" className="text-secondary navLink">About</Nav.Link>
-              <Nav.Link href="#" className="text-secondary navLink">Careers</Nav.Link>
-              <Nav.Link href="#" className="text-secondary navLink">Merchant Directory</Nav.Link>
-              <Nav.Link href="#" className="text-secondary navLink">Press</Nav.Link>
-              <Nav.Link href="#" className="text-secondary navLink">Blog</Nav.Link>
-              <Nav.Link href="#" className="text-secondary navLink">Stats</Nav.Link>
-              <Nav.Link href="#" className="text-secondary navLink">Legal</Nav.Link>
-              <Nav.Link href="#" className="text-secondary navLink">Privacy</Nav.Link>
-              <Nav.Link href="#" className="text-secondary navLink">Manage Cookies</Nav.Link>
-              <Nav.Link href="#" className="text-secondary navLink">Do Not Sell My Personal Information Under CCPA</Nav.Link>
-              <Nav.Link href="#" className="text-secondary navLink">Accessibility Statemant</Nav.Link>
+              <Nav.Link href="#" className="navLink">About</Nav.Link>
+              <Nav.Link href="#" className="navLink">Careers</Nav.Link>
+              <Nav.Link href="#" className="navLink">Merchant Directory</Nav.Link>
+              <Nav.Link href="#" className="navLink">Press</Nav.Link>
+              <Nav.Link href="#" className="navLink">Blog</Nav.Link>
+              <Nav.Link href="#" className="navLink">Stats</Nav.Link>
+              <Nav.Link href="#" className="navLink">Legal</Nav.Link>
+              <Nav.Link href="#" className="navLink">Privacy</Nav.Link>
+              <Nav.Link href="#" className="navLink">Manage Cookies</Nav.Link>
+              <Nav.Link href="#" className="navLink">Do Not Sell My Personal Information Under CCPA</Nav.Link>
+              <Nav.Link href="#" className="navLink">Accessibility Statemant</Nav.Link>
             </Nav>
-          </Col>    
+          </Col>
+          <Col xs={6} md={ 3 } lg={ 3 } className="mb-3">
+            <h6 className="text-dark" style={{ fontWeight: 'bold' }}>Get Latest Deals</h6>
+            <p className="text-secondary navLink">Our best promotions sent to your inbox.</p>
+            <input type="text" className="form-control" placeholder="Email Address" style={typrography} />
+            <button className="btn btn-footer">Subscribe</button>
+          </Col>
+        </Row>
+        <Row>
+          <Col xs={12} md={12} lg={12} className="mb-3">
+            <h6 className="text-dark" style={{ fontWeight: 'bold' }}>Contact Us</h6>
+            <p><strong>Contact Head Office:</strong> <span style={{ color: '#000' }}> 7b Ondo Street, Osborne Foreshore Estate Ikoyi.</span></p>
+            <p><strong>Phone Number:</strong> <span style={{ color: '#000' }}> 07017808188</span></p>
+          </Col>
         </Row>
       </Container>
     </footer>
   )
+}
+
+const typrography = {
+  borderRadius: '5px',
+  boxShadow: '0px 10px 30px rgba(116, 167, 249, 0.21)',
 }
 
 

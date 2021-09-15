@@ -1,13 +1,13 @@
 import React from 'react'
 import { Row, Col } from 'react-bootstrap';
 import Image from '../../images/slug.png'
-import { Link } from 'react-router-bootstrap';
+import { Link }from 'react-router-dom';
 
 
 const OurProduct = () => {
   return (
     <>
-      <Row className="py-5">
+      <Row className="py-3">
       <Col sm={12} md={6} lg={6}>
         <h5 className="ourProduct">Our Product</h5>
         <div>
@@ -19,26 +19,26 @@ const OurProduct = () => {
       </Col>
       <Col sm={12} md={6} lg={6} className="mx-auto">
         <div className="grid-item">
-          <a href="/products/groceries">
+          <Link to="/products/groceries">
               <div className="item1" style={items}>
                   <h6 style={itemText}>Groceries</h6>
               </div>
-            </a>
-            <a href="/products/groceries">
+          </Link>
+             <Link to="/products/groceries">
               <div className="item2" style={items}>
                 <h6 style={itemText}>Medical</h6>
               </div>
-            </a>
-            <a href="/products/groceries">
+           </Link>
+            <Link to="/products/billPayment">
               <div className="item3" style={items}>
                   <h6 style={itemText}>Bill Payment</h6>
              </div>
-            </a>
-            <a href="/products/groceries">
+            </Link>
+             <Link to="/products/invoiceUpload">
               <div className="item4" style={items}>
                 <h6 style={itemText}>Invoice Upload</h6>
-            </div>
-          </a>
+              </div>
+            </Link>
         </div>
       </Col>
     </Row>

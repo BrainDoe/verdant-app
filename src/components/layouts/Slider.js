@@ -16,7 +16,7 @@ const Slider = () => {
           </ol>
           <div class="carousel-inner">
           <div className="container">
-            <div class="carousel-item active">
+            <div class="carousel-item active" style={{ height: '450px' }}>
             <div className="row">
               <div className="col-md-6">
                   <h3 className="carousel-text">
@@ -34,7 +34,7 @@ const Slider = () => {
               </div>
             </div>
             </div>
-            <div class="carousel-item">
+            <div class="carousel-item" style={{ height: '450px' }}>
                  <div className="row">
               <div className="col-md-6">
                  <h3 className="carousel-text">
@@ -50,7 +50,7 @@ const Slider = () => {
               </div>
             </div>
             </div>
-            <div class="carousel-item">
+            <div class="carousel-item" style={{ height: '450px' }}>
                  <div className="row">
               <div className="col-md-6">
                  <h3 className="carousel-text">

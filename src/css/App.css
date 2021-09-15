@@ -19,6 +19,7 @@ body {
 .carousel-indicators li {
   border-radius: 100% !important;
   width: 11px !important;
+  background-color: #add8e6 !important;
 }
 
 .carousel-indicators .active {
@@ -375,18 +376,18 @@ transform: matrix(-1, 0, 0, 1, 0, 0);
 /* Who we are */
 
 .heading {
-display: flex;
-margin-left: 50px;
+ display: flex;
 }
 
 .para {
  font-family: 'Heebo';
 font-style: 'normal';
 font-weight: 'normal';
-font-size: 30px;
+font-size: 25px;
 line-height: 140%;
-margin-left: 1rem;
 }
+
+
 
 .text-para {
  font-family: 'Heebo';
@@ -583,11 +584,27 @@ line-height: 26px;
 footer .navLink {
 font-family: 'Heebo';
 font-style: normal;
-font-weight: bold;
-font-size: 18px;
+font-weight: 400;
+font-size: 16px;
 line-height: 26px;
-color: #121212;
+color: #121212 !important;
 
+} 
+
+footer .btn-footer {
+  background: #3785F7;
+box-shadow: 0px 10px 30px rgba(116, 167, 249, 0.5);
+border-radius: 5px;
+width: 144px;
+height: 52px;
+margin-top: 1.5rem;
+color: #fff;
+}
+
+footer .btn-footer:hover {
+  color: #fff;
+  background-color: #2379fa;
+  transition: all ease-in-out 0.32ms;
 }
 
 @media (max-width: 786px) {

@@ -20,7 +20,7 @@ const About = () => {
               <div style={blue}>
               </div>
             </div>
-            <p className="para text-dark">
+            <p className="para text-dark ml-3">
               "Our duty is not to fight the 
               disruption, but to embrace it."
             </p>

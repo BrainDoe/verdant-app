@@ -1,12 +1,11 @@
-import React, { useState, useEffect } from 'react'
+import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import image1 from '../../images/groceries-image/item1.png'
 import image2 from '../../images/groceries-image/grocery-banner.png'
 import image3 from '../../images/groceries-image/item3.png'
 import image4 from '../../images/groceries-image/item4.png'
 import image5 from '../../images/groceries-image/item5.png'
 import { Col, Row, DropdownButton, Dropdown, Card, Nav } from 'react-bootstrap'
-import { ChevronRight, HeartFill, Heart } from 'react-bootstrap-icons'
+import { ChevronRight} from 'react-bootstrap-icons'
 import Accordion  from './Accordion';
 // import axios from 'axios'
 import GroceryProduct from './GroceryProduct'
@@ -15,7 +14,7 @@ import Loader from './Loader'
 import Message from './Message'
 
 const Groceries = () => {
-  const [qty, setQty ] = useState(0)
+  // const [qty, setQty ] = useState(0)
 
   const dispatch = useDispatch()
   const productList = useSelector(state => state.productList)
@@ -74,7 +73,7 @@ const Groceries = () => {
                 <Nav defaultActiveKey="/" className="flex-column footer-nav">
                   <Nav.Link href="/home" className="text-dark">
                     <div className="d-flex">
-                      <img src={image3} alt="New Item Image" className="img-fluid" />
+                      <img src={image3} alt="New Item Photo" className="img-fluid" />
                       <div className="my-auto ml-2">
                         <span className="text-dark" style={{ fontSize: '16px', fontWeight: '500' }}>Tuber of Yam</span>
                         <p className="text-dark" style={{ fontSize: '16px', fontWeight: '400' }}>N 1,000</p> 
@@ -83,7 +82,7 @@ const Groceries = () => {
                   </Nav.Link>
                   <Nav.Link href="/home" className="text-dark">
                     <div className="d-flex">
-                      <img src={image4} alt="New Item Image" className="img-fluid" />
+                      <img src={image4} alt="New Item Photo" className="img-fluid" />
                       <div className="my-auto ml-2">
                         <span className="text-dark" style={{ fontSize: '16px', fontWeight: '500' }}>Beans per derica</span>
                         <p className="text-dark" style={{ fontSize: '16px', fontWeight: '400' }}>N 1,000</p> 
@@ -92,7 +91,7 @@ const Groceries = () => {
                   </Nav.Link>
                   <Nav.Link href="/home" className="text-dark">
                   <div className="d-flex">
-                    <img src={image5} alt="New Item Image" className="img-fluid" />
+                    <img src={image5} alt="New Item Photo" className="img-fluid" />
                     <div className="my-auto ml-2">
                       <span className="text-dark" style={{ fontSize: '16px', fontWeight: '500' }}>Rice, Pasta, Noodles </span>
                       <p className="text-dark" style={{ fontSize: '16px', fontWeight: '400' }}>N 1,000</p> 
@@ -117,7 +116,8 @@ const Groceries = () => {
               </Col>
               <Col md={6} sm={12}>
                 <div className="pt-4 mx-4 d-flex align-items-center justify-content-center">
-                  <span style={{fontSize: '14px', fontWeight: '400', marginRight: '10px' }}>Sort By:</span>
+                    <span style={{ fontSize: '14px', fontWeight: '400', marginRight: '10px' }}>Sort By:</span>
+                    
                   <DropdownButton id="dropdown-basic-button" title="New Products" className="ms-4 sorted-btn" id="sorted-btn" style={{ fontSize: '12px', fontWeight: '400', backgroundColor: '#C4C4C436' }}>
                     <Dropdown.Item href="#" className="text-dark navlink" style={{ fontSize: '12px', fontWeight: '500' }}>New Products</Dropdown.Item>
                     <Dropdown.Item href="#" className="text-dark navlink" style={{ fontSize: '12px', fontWeight: '400' }}>Price - Low to High</Dropdown.Item>

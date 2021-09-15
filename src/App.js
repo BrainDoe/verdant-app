@@ -17,6 +17,7 @@ import Login from './components/Login';
 import Signup from './components/Signup';
 import FAQ from './components/FAQ';
 import Contact from './components/Contact';
+import Profile from './components/Profile';
 
 
 
@@ -26,6 +27,9 @@ const  App = () => {
       <Header />
       <Route path="/" component={Slider} exact />
       <main>
+        
+        <Route path="/login" component={Login}/>
+        <Route path="/signup" component={Signup}/>
         <Container>
           <Route path="/" component={Section} exact />
           <Route path="/products/groceries" component={Groceries} />
@@ -37,12 +41,11 @@ const  App = () => {
           <Route path="/products/invoiceUpload" component={ InvoiceUpload } />
           <Route path="/products/checkout" component={ Checkout } />
           <Route path="/help/faq" component={FAQ}/>
-          <Route path="/help/contact" component={Contact}/>
+          <Route path="/help/contact" component={Contact}/>        
+          <Route path="/profile"  component={Profile}/>
 
         </Container>
         <Route path="/about"  component={About}/>
-        <Route path="/login" component={Login}/>
-        <Route path="/signup" component={Signup}/>
       </main>
       <Footer />
 

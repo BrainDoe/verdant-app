@@ -43,14 +43,14 @@ const Cart = ({ match, location, history }) => {
 
       <Row>
         <Col md={8}>
-          <Row style={{ backgroundColor: '#E5E5E5' }}>
-            <Col md={6}>
+          <Row>
+            <Col md={6} className="cart-items-header">
               <p style={{ fontSize: '20px', fontWeight: '500',  paddingTop: '15px' }}>Product</p>
             </Col>
-            <Col md={3}>
+            <Col md={3} className="cart-items-header">
               <p style={{ fontSize: '20px', fontWeight: '500',  paddingTop: '15px' }}>Quantity</p>
             </Col>
-            <Col md={3}>
+            <Col md={3} className="cart-items-header">
             <p style={{ fontSize: '20px', fontWeight: '500',  paddingTop: '15px' }}>Price</p>
             </Col>
           </Row>

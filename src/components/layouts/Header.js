@@ -1,10 +1,21 @@
 import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { Container, Navbar, Nav, NavDropdown, Dropdown, DropdownButton, Image } from 'react-bootstrap';
 import image from "../images/logo.PNG"
 import { CartFill } from 'react-bootstrap-icons';
 import { LinkContainer } from 'react-router-bootstrap';
+import { logout } from '../../actions/userActions';
 
 const Header = () => {
+  const dispatch = useDispatch()
+  const userLogin = useSelector(state => state.userLogin)
+  const { userInfo } = userLogin
+  // console.log(userInfo)
+
+  const logoutHandler = () => {
+    dispatch(logout())
+  }
+
   return (
     <header>
       <Navbar className="py-2 shadow-sm" expand="lg">
@@ -65,15 +76,32 @@ const Header = () => {
                 <CartFill className="ml-2" size={20} style={{ fontSize: '7px', fontWeight: '500' }} />
               </Nav.Link>
             </LinkContainer>
-
-            <DropdownButton id="dropdown-basic-button" title="Account" className="ms-4 dropdown-btn" style={{ fontSize: '18px', fontWeight: '500' }}>
-              <LinkContainer to="/login">
-                <Dropdown.Item className="text-dark navlink" style={{ fontSize: '12px', fontWeight: '400' }}>Login</Dropdown.Item>
-              </LinkContainer>
-              <LinkContainer to="/signup">
-                <Dropdown.Item className="text-dark navlink" style={{ fontSize: '12px', fontWeight: '400' }}>Signup</Dropdown.Item>
-              </LinkContainer>
-            </DropdownButton>
+            {/* <DropdownButton id="dropdown-basic-button" title="Account" className="ms-4 dropdown-btn" style={{ fontSize: '18px', fontWeight: '500' }}> */}
+              {userInfo ? (
+                <div>
+                  <DropdownButton id="dropdown-basic-button" title={userInfo.user.name} className="ms-4 dropdown-btn" style={{ fontSize: '18px', fontWeight: '500' }}>
+                    <LinkContainer to="/profile">
+                      <Dropdown.Item className="text-dark navlink" style={{ fontSize: '12px', fontWeight: '400' }}>Profile</Dropdown.Item>
+                    </LinkContainer>
+                    <LinkContainer to="/">
+                      <Dropdown.Item className="text-dark navlink" style={{ fontSize: '12px', fontWeight: '400' }} onClick={logoutHandler}>Logout</Dropdown.Item>
+                    </LinkContainer>
+                  </DropdownButton>
+                </div>
+              ) : (
+                <div>
+                  <DropdownButton id="dropdown-basic-button" title="Account" className="ms-4 dropdown-btn" style={{ fontSize: '18px', fontWeight: '500' }}>
+                    <LinkContainer to="/login">
+                      <Dropdown.Item className="text-dark navlink" style={{ fontSize: '12px', fontWeight: '400' }}>Login</Dropdown.Item>
+                    </LinkContainer>
+                    <LinkContainer to="/signup">
+                      <Dropdown.Item className="text-dark navlink" style={{ fontSize: '12px', fontWeight: '400' }}>Signup</Dropdown.Item>
+                    </LinkContainer>
+                  </DropdownButton>
+                </div>
+              )}
+              
+            {/* </DropdownButton> */}
           </Nav>
         </Navbar.Collapse>
       </Container>

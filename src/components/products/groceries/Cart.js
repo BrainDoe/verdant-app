@@ -108,17 +108,7 @@ const Cart = ({ match, location, history }) => {
             </div>
 
           )}
-          {/* <Row className="bg-white pb-3">
-            <Col md={12}>
-              <Heart className="mr-2 text-warning" size={20}/>
-              <span style={{ fontSize: '12px', fontWeight: '500', lineHeight: '16.14px', marginRight: '15px', color: '#F6C54C', cursor: 'pointer' }}>MOVE TO SAVED ITEMS</span> 
-                <span style={{ fontSize: '12px', fontWeight: '500', lineHeight: '16.14px', color: '#F6C54C', cursor: 'pointer' }}>
-                  <TrashFill className="mr-2 text-warning" size={20} />
-                  REMOVE
-                </span>
-            </Col>
           
-          </Row> */}
         </Col>
 
         <Col md={4}>

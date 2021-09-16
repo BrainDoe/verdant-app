@@ -19,6 +19,7 @@ import FAQ from './components/FAQ';
 import Contact from './components/Contact';
 import Profile from './components/Profile';
 import Orders from './components/Orders';
+import SavedItems from './components/SavedItems';
 
 
 
@@ -45,6 +46,7 @@ const  App = () => {
           <Route path="/help/contact" component={Contact} />        
           <Route path="/profile"  component={Profile} />
           <Route path="/orders"  component={Orders} />
+          <Route path="/saved-items"  component={SavedItems} />
 
         </Container>
         <Route path="/about"  component={About}/>

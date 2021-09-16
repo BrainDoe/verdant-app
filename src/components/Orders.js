@@ -23,7 +23,7 @@ const Orders = () => {
       </Row>
 
       <Row>
-      <Col md={3} lg={4}>
+        <Col md={3} lg={4}>
           <div style={{ backgroundColor: '#F9F9F9', padding: '40px 0', borderRadius: '5px', boxShadow: '0px 4px 28px rgba(55, 133, 247, 0.03)', height: '100%' }}>
             <ul>
               <li className="d-flex align-items-center justify-items-center py-3 px-3">

@@ -237,18 +237,28 @@ main {
 .line-crypto {
   background: url('../components/images/line.png');
   background-position: center;
- background-size: cover;
- width: 311.5px;
- height: 30.53px;
- position: absolute;
- left: 112px;
- top: 230px;
+  background-size: cover;
+  width: 311.5px;
+  height: 30.53px;
+  position: absolute;
+  left: 112px;
+  top: 230px;
+}
+
+/* Who we are */
+.whoWeAre{
+  font-family: 'Heebo';
+  font-style: 'normal';
+  font-weight:' 500';
+  font-size: '36px';
+  line-height: '173.5%';
+  color: '#3785F7'
 }
 /* Our Product */
 .grid-item {
-display: grid;
-grid-template-columns: repeat(2, 1fr);
-gap: 1rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
 }
 
 .grid-item  .item1 {
@@ -303,53 +313,6 @@ transition: 0.35s;
   transform: scale(1.1);
 }
 
-
-/* Our Solution */
-.solution1 {
-background: url('../components/images/partnerships.png');
- background-position: center;
-background-size: cover;
-/* STROKE COLOUR */
-
-border: 8px solid rgba(190, 216, 255, 0.51);
-box-sizing: border-box;
-border-radius: 0px 40px;
-
-}
-.solution2 {
-background: url('../components/images/solution2.png');
- background-position: center;
-background-size: cover;
-/* STROKE COLOUR */
-
-border: 8px solid rgba(190, 216, 255, 0.51);
-box-sizing: border-box;
-border-radius: 0px 40px;
-
-
-}
-.solution3 {
-background: url('../components/images/solution3.png');
- background-position: center;
-background-size: cover;
-/* STROKE COLOUR */
-
-border: 8px solid rgba(190, 216, 255, 0.51);
-box-sizing: border-box;
-border-radius: 0px 40px;
-
-}
-.solution4 {
-background: url('../components/images/solution4.png');
- background-position: center;
-background-size: cover;
-/* STROKE COLOUR */
-
-border: 8px solid rgba(190, 216, 255, 0.51);
-box-sizing: border-box;
-border-radius: 0px 40px;
-
-}
 
 /* Accordion */
 .btn-accordion {
@@ -667,10 +630,15 @@ align-items: center;
  top: 180px;
 }
 
-.ourProduct {
+.ourProduct, .send-money {
   text-align: center;
   color: #3785F7 !important;
 }
+
+.para-card, .whoWeAre {
+   text-align: center;
+}
+
 
 .para {
 font-size: 25px;

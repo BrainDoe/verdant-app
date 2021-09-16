@@ -2,6 +2,7 @@ import React from 'react'
 import { Row, Col } from 'react-bootstrap';
 import Image from '../../images/slug.png'
 import { Link }from 'react-router-dom';
+import PropTypes from 'prop-types'
 
 
 const OurProduct = () => {
@@ -83,5 +84,16 @@ const itemText = {
   paddingTop: '6rem'
  
 }
+
+OurProduct.propTypes = {
+  imageStyle: PropTypes.object.isRequired,
+  itemText: PropTypes.object.isRequired,
+  overlay: PropTypes.object.isRequired,
+}
+
+
+
+
+
 
 export default OurProduct

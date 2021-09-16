@@ -10,7 +10,7 @@ const WhoWeAre = () => {
     <>
       <Row>
         <Col sm={12} md={12} lg={12}>
-             <h5 style={wraper}>WHO WE ARE</h5>
+             <h5 className="whoWeAre">WHO WE ARE</h5>
         </Col>
       </Row>
       <Row>
@@ -49,14 +49,7 @@ const WhoWeAre = () => {
   )
 }
 
-const wraper = {
-    fontFamily: 'Heebo',
-    fontStyle: 'normal',
-    fontWeight:' 500',
-    fontSize: '36px',
-    lineHeight: '173.5%',
-    color: '#3785F7'
-}
+
 
 
 
@@ -97,7 +90,10 @@ const linkMore = {
 
 
 WhoWeAre.propTypes = {
-  wraper: PropTypes.object.isRequired,
+  linkMore: PropTypes.object.isRequired,
+  textWho: PropTypes.object.isRequired,
+  blue: PropTypes.object.isRequired,
+  yello: PropTypes.object.isRequired,
 }
 
 

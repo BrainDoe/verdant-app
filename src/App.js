@@ -18,6 +18,7 @@ import Signup from './components/Signup';
 import FAQ from './components/FAQ';
 import Contact from './components/Contact';
 import Profile from './components/Profile';
+import Orders from './components/Orders';
 
 
 
@@ -40,9 +41,10 @@ const  App = () => {
           <Route path="/products/billPayment/crypto" component={ CryptoPayment } />
           <Route path="/products/invoiceUpload" component={ InvoiceUpload } />
           <Route path="/products/checkout" component={ Checkout } />
-          <Route path="/help/faq" component={FAQ}/>
-          <Route path="/help/contact" component={Contact}/>        
-          <Route path="/profile"  component={Profile}/>
+          <Route path="/help/faq" component={FAQ} />
+          <Route path="/help/contact" component={Contact} />        
+          <Route path="/profile"  component={Profile} />
+          <Route path="/orders"  component={Orders} />
 
         </Container>
         <Route path="/about"  component={About}/>

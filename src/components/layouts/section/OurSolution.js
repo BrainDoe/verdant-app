@@ -71,7 +71,7 @@ const wraper = {
     fontFamily: 'Heebo',
     fontStyle: 'normal',
     fontWeight:' 500',
-    fontSize: '36px',
+    fontSize: '30px',
     lineHeight: '173.5%',
     color: '#3785F7',
 }

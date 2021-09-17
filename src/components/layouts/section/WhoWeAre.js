@@ -10,7 +10,7 @@ const WhoWeAre = () => {
     <>
       <Row>
         <Col sm={12} md={12} lg={12}>
-             <h5 className="whoWeAre">WHO WE ARE</h5>
+             <h5 className="ourProduct">WHO WE ARE</h5>
         </Col>
       </Row>
       <Row>
@@ -56,14 +56,14 @@ const WhoWeAre = () => {
 const yello = {
  backgroundColor: '#F6C54C',
   width: '1px',
-  height: '30px',
+  height: '20px',
   border: '2px solid #F6C54C',
 }
 
 const blue = {
   backgroundColor: '#3785F7',
   width: '1px',
-  height: '30px',
+  height: '20px',
   border: '2px solid #3785F7',
 }
 

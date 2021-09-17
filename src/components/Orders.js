@@ -39,7 +39,7 @@ const Orders = () => {
                   <p className="mb-0" style={{ fontSize: '20px', fontWeight: '500', lineHeight: '29.38px' }}>My Orders</p>
                 </li>
               </Link>
-              <Link to="/profile" className="text-decoration-none text-dark">
+              <Link to="/saved-items" className="text-decoration-none text-dark">
                 <li className="d-flex align-items-center justify-items-center py-3 px-3">
                   <Heart size={20} style={{ marginRight: '15px' }} />
                   <p className="mb-0" style={{ fontSize: '20px', fontWeight: '400', lineHeight: '29.38px' }}>Saved Items</p>

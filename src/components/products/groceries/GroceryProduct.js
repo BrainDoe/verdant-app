@@ -7,11 +7,11 @@ import { Link } from 'react-router-dom';
 const GroceryProduct = ({product}) => {
   return (
     <>
-      <Card className="bg-white" style={{ borderRadius: '3px', width: '250px'}}>
+      <Card className="bg-white" style={{ borderRadius: '3px'}}>
         <div className="py-3 px-3 bg-white">
           <Link to={`/groceries/${product.id}`} className="text-decoration-none">
             <div>
-              <img src={image1}  className="img-fluid" alt="Grocery Item" />
+              <img src={image1}  className="card-img" alt="Grocery Item" />
             </div>
           </Link>
           <div className="card-body">

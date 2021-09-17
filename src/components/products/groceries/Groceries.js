@@ -52,7 +52,7 @@ const Groceries = () => {
       
       <section className="p-3 my-5">
       <Row>
-        <Col md={3} className="pr-4">
+        <Col as="div" sm={12} md={3} className="px-0">
           <Card className="mb-5">
             <Accordion title="Category" style={{ fontSize: '20px', fontWeight: '500' }}>
               <Card.Body>
@@ -102,45 +102,47 @@ const Groceries = () => {
                 </Nav>
               </Card.Body>
             </Accordion>
-          </Card>
-            
+          </Card>            
         </Col>
 
         {/* /Product->Category->Grocery->Items */}
         <Col md={9} className="px-0 groceries-container">
-          <Card className="pb-5">
-            <Row>
-              <Col md={6} sm={12}>        
-                <div className="pt-4 mx-4">
-                  <h5 className="text-dark" style={{ fontSize: '18px', fontWeight: '500' }}>Beverage and Cereals</h5>
-                </div>
-              </Col>
-              <Col md={6} sm={12}>
-                <div className="pt-4 mx-4 d-flex align-items-center justify-content-center">
-                  <span style={{fontSize: '14px', fontWeight: '400', marginRight: '10px' }}>Sort By:</span>
-                  <DropdownButton id="dropdown-basic-button" title="New Products" className="ms-4 sorted-btn" id="sorted-btn" style={{ fontSize: '12px', fontWeight: '400', backgroundColor: '#C4C4C436' }}>
-                    <Dropdown.Item href="#" className="text-dark navlink" style={{ fontSize: '12px', fontWeight: '500' }}>New Products</Dropdown.Item>
-                    <Dropdown.Item href="#" className="text-dark navlink" style={{ fontSize: '12px', fontWeight: '400' }}>Price - Low to High</Dropdown.Item>
-                    <Dropdown.Item href="#" className="text-dark navlink" style={{ fontSize: '12px', fontWeight: '400' }}>Price - High to Low</Dropdown.Item>
-                  </DropdownButton>
-                </div>
-              </Col>
-            </Row>
+          <div className="card-wrapper">
 
-            <hr />
-
-            {loading ? <Loader /> : error ? <Message variant="danger">{error} </Message> : (
-
+            <Card className="pb-5">
               <Row>
-                {products.map(product => (
-                  <Col sm={12} md={6} lg={4} key={product.id} className="mb-3">
-                    <GroceryProduct product={product} key={product.id}/>
-                  </Col>
-                ))}             
+                <Col md={6} sm={12}>        
+                  <div className="pt-4 mx-4">
+                    <h5 className="text-dark grocery-header-text" style={{ fontSize: '18px', fontWeight: '500' }}>Beverage and Cereals</h5>
+                  </div>
+                </Col>
+                <Col md={6} sm={12}>
+                  <div className="pt-4 mx-4 d-flex align-items-center justify-content-center">
+                    <span style={{fontSize: '14px', fontWeight: '400', marginRight: '10px' }}>Sort By:</span>
+                    <DropdownButton id="dropdown-basic-button" title="New Products" className="ms-4 sorted-btn" id="sorted-btn" style={{ fontSize: '12px', fontWeight: '400', backgroundColor: '#C4C4C436' }}>
+                      <Dropdown.Item href="#" className="text-dark navlink" style={{ fontSize: '12px', fontWeight: '500' }}>New Products</Dropdown.Item>
+                      <Dropdown.Item href="#" className="text-dark navlink" style={{ fontSize: '12px', fontWeight: '400' }}>Price - Low to High</Dropdown.Item>
+                      <Dropdown.Item href="#" className="text-dark navlink" style={{ fontSize: '12px', fontWeight: '400' }}>Price - High to Low</Dropdown.Item>
+                    </DropdownButton>
+                  </div>
+                </Col>
               </Row>
-            )}
 
-          </Card>
+              <hr />
+
+              {loading ? <Loader /> : error ? <Message variant="danger">{error} </Message> : (
+
+                <Row>
+                  {products.map(product => (
+                    <Col sm={12} md={4} key={product.id} className="mb-3 mx-auto">
+                      <GroceryProduct product={product} key={product.id}/>
+                    </Col>
+                  ))}             
+                </Row>
+              )}
+
+            </Card>
+          </div>
         </Col>
       </Row>
       </section>

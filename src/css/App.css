@@ -166,6 +166,10 @@ main {
   padding: 1em 0; 
 }
 
+.card-wrapper {
+  margin-left: 15px;
+}
+
 /* Increament And Decreament Button */
 .inc-wrapper {
   padding: 0px 5px;
@@ -630,15 +634,15 @@ align-items: center;
  width: 250.5px;
  height: 30.53px;
  position: absolute;
- left: 60px;
- top: 220px;
+ left: 150px;
+ top: 225px;
 }
 
 .line-crypto {
  width: 250.5px;
  height: 30.53px;
  position: absolute;
- left: 50px;
+ left: 150px;
  top: 180px;
 }
 
@@ -689,14 +693,13 @@ margin-left: 0;
 text-align: center;
 }
 
-.about-belief, .text-location {
+.about-belief, .text-location, .grocery-header-text {
   text-align: center;
 }
 
   /* Groceries item and Category card container */
   .groceries-container {
-    margin: 2rem 0;
-    /* padding-left: 0px; */
+    margin: 2rem 0px !important;
   }
 
   /* Remove the image on the Signup and Login pages */
@@ -706,6 +709,10 @@ text-align: center;
 
   .cart-items-header {
     display: none;
+  }
+
+  .card-wrapper {
+    margin-left: 0;
   }
 
 }

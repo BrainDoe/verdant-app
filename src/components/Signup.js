@@ -106,12 +106,6 @@ const Signup = ({history, location}) => {
                 <div className="right-line"></div>
               </div>
 
-              {/* <div className="google">
-                <a>
-                  <img src={googleIcon} alt="Google Icon" />
-                  Google
-                </a>
-              </div> */}
               <div className="mt-5"></div>
               
               <button className="btn btn-outline-primary p-3 btn-block">

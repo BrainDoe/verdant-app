@@ -1,7 +1,7 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Container, Navbar, Nav, NavDropdown, Dropdown, DropdownButton, Image } from 'react-bootstrap';
-import image from "../images/logo.PNG"
+import logo from "../images/new-logo.png"
 import { CartFill } from 'react-bootstrap-icons';
 import { LinkContainer } from 'react-router-bootstrap';
 import { logout } from '../../actions/userActions';
@@ -22,7 +22,7 @@ const Header = () => {
         <Container>
           <LinkContainer to="/">
             <Navbar.Brand className="text-primary"> 
-              <Image src={image} style={{ width: '50px' }} alt="Brand Logo" /> <span style={{ fontSize: '21.43px', fontWeight: '700' }}> BL Digital</span>
+              <Image src={logo} style={{ width: '120px' }} alt="Brand Logo" />
             </Navbar.Brand>
           </LinkContainer>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -79,7 +79,7 @@ const Header = () => {
             {/* <DropdownButton id="dropdown-basic-button" title="Account" className="ms-4 dropdown-btn" style={{ fontSize: '18px', fontWeight: '500' }}> */}
               {userInfo ? (
                 <div>
-                  <DropdownButton id="dropdown-basic-button" title={userInfo.user.name} className="ms-4 dropdown-btn" style={{ fontSize: '18px', fontWeight: '500' }}>
+                  <DropdownButton id="dropdown-basic-button" title={userInfo.user.name} className="ms-4 dropdown-btn login-btn" style={{ fontSize: '12px', fontWeight: '400' }}>
                     <LinkContainer to="/profile">
                       <Dropdown.Item className="text-dark navlink" style={{ fontSize: '12px', fontWeight: '400' }}>Profile</Dropdown.Item>
                     </LinkContainer>

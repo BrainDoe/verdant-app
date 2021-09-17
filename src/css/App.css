@@ -927,7 +927,12 @@ text-align: center;
   padding: 10px 10px;;
 }
 
-
 .cart-items-header {
   background-color: #E5E5E5;
+}
+
+/* Button Login */
+.login-btn .btn {
+  font-size: 15px !important;
+  font-weight: 400 !important;
 }

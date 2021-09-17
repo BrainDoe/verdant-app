@@ -14,6 +14,7 @@ export const listProducts = () => async (dispatch) => {
     dispatch({type: PRODUCT_LIST_REQUEST})
 
     const { data } = await axios.get('https://fakestoreapi.com/products?limit=6')
+    // const { data } = await axios.get('https://verdant-store.herokuapp.com/product/catalog')
 
     dispatch({
       type: PRODUCT_LIST_SUCCESS,

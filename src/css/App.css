@@ -246,13 +246,13 @@ main {
 }
 
 /* Who we are */
-.whoWeAre{
+.who{
   font-family: 'Heebo';
   font-style: 'normal';
   font-weight:' 500';
   font-size: '36px';
   line-height: '173.5%';
-  color: '#3785F7'
+  color: '#3785F7 ' !important;
 }
 /* Our Product */
 .grid-item {
@@ -346,7 +346,7 @@ transform: matrix(-1, 0, 0, 1, 0, 0);
  font-family: 'Heebo';
 font-style: 'normal';
 font-weight: 'normal';
-font-size: 20px;
+font-size: 16px;
 line-height: 140%;
 }
 
@@ -364,7 +364,7 @@ line-height: 120%;
  font-family: 'Heebo';
 font-style: 'normal';
 font-weight: 'normal';
-font-size: 30px;
+font-size: 18px;
 line-height: 140%;
 }
 
@@ -383,9 +383,21 @@ margin-left: 1rem;
 font-family: 'Heebo';
 font-style: normal;
 font-weight: 500;
-font-size: 36px;
+font-size: 20px;
 line-height: 173.38%;
 color: #3785F7;
+text-transform: uppercase;
+/* padding: 4rem 0; */
+}
+
+.product-text {
+font-family: 'Heebo';
+font-style: normal;
+font-weight: normal;
+font-size: 16px;
+line-height: 173.38%;
+color: #121212;
+list-style: none;
 /* padding: 4rem 0; */
 }
 

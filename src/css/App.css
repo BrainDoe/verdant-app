@@ -604,6 +604,15 @@ footer .btn-footer:hover {
   transition: all ease-in-out 0.32ms;
 }
 
+/* .latest-product {
+  position: relative;
+} */
+
+.latest-product-img {
+  width: 200px !important;
+  height: 200px !important;
+}
+
 @media (max-width: 786px) {
 .grid-element {
    grid-template-columns: repeat(2, 1fr) !important;
@@ -713,6 +722,11 @@ text-align: center;
 
   .card-wrapper {
     margin-left: 0;
+  }
+
+  .latest-product-img {
+    width: 100% !important;
+    height: 100% !important;
   }
 
 }

@@ -10,8 +10,8 @@ const GroceryProduct = ({product}) => {
       <Card className="bg-white" style={{ borderRadius: '3px'}}>
         <div className="py-3 px-3 bg-white">
           <Link to={`/groceries/${product.id}`} className="text-decoration-none">
-            <div>
-              <img src={product.image}  className="card-img" alt="Grocery Item" style={{ width: '200px', height: '200px' }} />
+            <div className="latest-product">
+              <img src={product.image}  className="latest-product-img card-img mx-auto" alt="Grocery Item" />
             </div>
           </Link>
           <div className="card-body">

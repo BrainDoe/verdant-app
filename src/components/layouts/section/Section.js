@@ -7,6 +7,7 @@ import image1 from '../../images/partnerships.png'
 import image2 from '../../images/solution2.png'
 import image3 from '../../images/solution3.png'
 import image4 from '../../images/solution4.png'
+import LatestProducts from './LatestProducts';
 
 const Section = () => {
   const items = [
@@ -50,6 +51,10 @@ const Section = () => {
       </div>
       <div className="py-5">
         <HowItWorks/>
+      </div>
+
+      <div className="py-5">
+        <LatestProducts />
       </div>
     </>
   )

@@ -16,6 +16,7 @@ const GroceryDetail = ({ history, match }) => {
 
   const productDetails = useSelector(state => state.productDetails)
   const { loading, error, product } = productDetails
+  // console.log(product)
 
   useEffect(() => {
     dispatch(listProductDetails(match.params.id))
@@ -55,7 +56,7 @@ const GroceryDetail = ({ history, match }) => {
                         <h4 className="mt-3" style={{ fontSize: '30px', fontWeight: '500' }}>{product.title}</h4>
                         <p style={{ fontSize: '20px', fontWeight: '500' }}>Product Code: <strong>12345</strong></p>
                         <hr />
-                        <h5 className="text-primary" style={{ fontSize: '26px', fontWeight: '500' }}>N {product.price}</h5>
+                        <h5 className="text-primary" style={{ fontSize: '26px', fontWeight: '500' }}>$ {product.price}</h5>
                         <hr />
 
                         <div className="d-flex justify-content-even">

@@ -11,7 +11,7 @@ const GroceryProduct = ({product}) => {
         <div className="py-3 px-3 bg-white">
           <Link to={`/groceries/${product.id}`} className="text-decoration-none">
             <div>
-              <img src={image1}  className="card-img" alt="Grocery Item" />
+              <img src={product.image}  className="card-img" alt="Grocery Item" style={{ width: '200px', height: '200px' }} />
             </div>
           </Link>
           <div className="card-body">

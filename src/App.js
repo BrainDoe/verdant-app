@@ -34,7 +34,8 @@ const  App = () => {
         <Route path="/signup" component={Signup}/>
         <Container>
           <Route path="/" component={Section} exact />
-          <Route path="/products/groceries" component={Groceries} />
+          <Route path="/products/groceries/:ref" component={Groceries} />
+          
           <Route path="/groceries/:id" component={GroceryDetail} />
           <Route path="/cart/:id?" component={Cart} />
 

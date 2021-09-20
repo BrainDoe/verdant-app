@@ -6,32 +6,66 @@ import image3 from '../../images/groceries-image/item3.png'
 import image4 from '../../images/groceries-image/item4.png'
 import image5 from '../../images/groceries-image/item5.png'
 import { Col, Row, DropdownButton, Dropdown, Card, Nav } from 'react-bootstrap'
-import { ChevronRight, HeartFill, Heart } from 'react-bootstrap-icons'
+import { ChevronRight } from 'react-bootstrap-icons'
 import Accordion  from './Accordion';
-// import axios from 'axios'
+import axios from 'axios'
 import GroceryProduct from './GroceryProduct'
-import { listProducts } from '../../../actions/productActions'
 import Loader from './Loader'
 import Message from './Message'
+import { listProducts } from '../../../actions/productActions'
+import { getCategories } from '../../../actions/categoriesActions'
+import { Link } from 'react-router-dom'
+
 
 const Groceries = () => {
   const [qty, setQty ] = useState(0)
 
   const dispatch = useDispatch()
+
   const productList = useSelector(state => state.productList)
   const {loading, error, products} = productList 
 
+  const categoryItem = useSelector(state => state.categories)
+  const {categories} = categoryItem 
+
   // const [products, setProduct] = useState([])
+  const [productCategories, setProductCategories] = useState([])
+  const [singleProduct, setSingleProduct] = useState({})
 
   useEffect(() => {
+
     // const fetchProducts = async () => {
     //   const {data} = await axios.get('https://verdant-store.herokuapp.com/product/catalog');
     //   setProduct(data.products);
-    // };
-    // fetchProducts();
+    // }
+
+
+    const fetchProductsCategories = async () => {
+      const {data} = await axios.get('https://verdant-store.herokuapp.com/product/categories');
+      
+      setProductCategories(data.categories)
+    };
+    fetchProductsCategories()
+
+    const fetchSubCatItems = async () => {
+      const {data } = await axios.get('https://verdant-store.herokuapp.com/product/catalog/subcategory/U62bhrRbwQ7YK4egCB1F1/JDRYJTWDNl6JYqmPiANLV')
+      data.products.map(product => console.log(product.name))
+    }
+    fetchSubCatItems()
+    
+
 
     dispatch(listProducts())
   }, [dispatch]);
+
+  // const fetchProductsCategories = async () => {
+  //   const {data} = await axios.get('https://verdant-store.herokuapp.com/product/categories');
+  //   // setProductCategories(data);
+  //   const item = data.categories.map(cat => {
+  //     // cat.sub_categories.map(subcat => console.log(subcat.name))
+  //   })
+  // };
+  // fetchProductsCategories()
 
 
   return (
@@ -56,14 +90,29 @@ const Groceries = () => {
           <Card className="mb-5">
             <Accordion title="Category" style={{ fontSize: '20px', fontWeight: '500' }}>
               <Card.Body>
-                <Nav defaultActiveKey="/" className="flex-column footer-nav">
+                {productCategories.map(cat => (
+                 
+                  <div>
+                    <Nav defaultActiveKey="/" className="flex-column footer-nav">
+                      
+                        {cat.sub_categories.map(subCat => (
+                         <Link to={`/products/groceries/${cat.ref}/${subCat.ref}`} className="text-decoration-none">
+                          <Nav.Link className="text-dark" style={{ fontSize: '16px', fontWeight: '400' }} >
+                            {subCat.name}
+                          </Nav.Link>
+                          </Link>
+                        ))}
+                    </Nav>    
+                  </div>
+                ))}
+                {/* <Nav defaultActiveKey="/" className="flex-column footer-nav">
                   <Nav.Link href="#" className="text-dark" style={{ fontSize: '16px', fontWeight: '400' }}>Beverages and Cereals </Nav.Link>
                   <Nav.Link href="#" className="text-dark" style={{ fontSize: '16px', fontWeight: '400' }}>Rice, Pasta, Noodles</Nav.Link>
                   <Nav.Link href="#" className="text-dark" style={{ fontSize: '16px', fontWeight: '400' }}>Yam</Nav.Link>
                   <Nav.Link href="#" className="text-dark" style={{ fontSize: '16px', fontWeight: '400' }}>Beans</Nav.Link>
                   <Nav.Link href="#" className="text-dark" style={{ fontSize: '16px', fontWeight: '400' }}>Fruits and Juices</Nav.Link>
                   <Nav.Link href="#" className="text-dark" style={{ fontSize: '16px', fontWeight: '400' }}>Processed</Nav.Link>
-                </Nav>
+                </Nav> */}
               </Card.Body>
             </Accordion>
           </Card>
@@ -135,7 +184,7 @@ const Groceries = () => {
                 <Row>
                   {products.map(product => (
                     <Col sm={12} md={4} key={product.id} className="mb-3 mx-auto">
-                      <GroceryProduct product={product} key={product.id}/>
+                      <GroceryProduct product={product} key={product.id} />
                     </Col>
                   ))}             
                 </Row>

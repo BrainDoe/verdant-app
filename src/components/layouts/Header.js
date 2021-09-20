@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import axios from 'axios'
 import { useDispatch, useSelector } from 'react-redux';
 import { Container, Navbar, Nav, NavDropdown, Dropdown, DropdownButton, Image } from 'react-bootstrap';
 import logo from "../images/new-logo.png"
@@ -15,6 +16,25 @@ const Header = () => {
   const logoutHandler = () => {
     dispatch(logout())
   }
+
+  const [productCategories, setProductCategories] = useState([])
+
+  useEffect(() => {
+    const fetchProductsCategories = async () => {
+      const {data} = await axios.get('https://verdant-store.herokuapp.com/product/categories');
+     
+      setProductCategories(data.categories)
+ 
+          
+      // const item = data.categories.map(cat => {
+      //   // const globalCategory = cat.sub_categories.map(subcat => console.log(subcat.name))
+      //   setProductCategories(cat.category)
+      // })
+    };
+    fetchProductsCategories()
+  }, [])
+
+
 
   return (
     <header>
@@ -33,9 +53,14 @@ const Header = () => {
               <Nav.Link  className="mr-3 text-dark">About Us</Nav.Link>
             </LinkContainer>
             <NavDropdown className="mr-3 text-dark color" title="Products" id="basic-nav-dropdown" style={{ fontSize: '18px', fontWeight: '400' }}>
-              <LinkContainer to="/products/groceries"  style={{ fontSize: '12px', fontWeight: '400' }}>           
-                <NavDropdown.Item className="text-dark navlink">Groceries</NavDropdown.Item>
-                </LinkContainer>
+              {productCategories.map(cat => (
+
+                <div>
+                    <LinkContainer to={`/products/groceries/${cat.ref}`}  style={{ fontSize: '12px', fontWeight: '400' }}>           
+                      <NavDropdown.Item className="text-dark navlink">{cat.category}</NavDropdown.Item>
+                    </LinkContainer>
+                </div>
+              ))}
                 {/* Bill Payment Link */}
                  <LinkContainer to="/products/billPayment" style={{ fontSize: '12px', fontWeight: '400' }}>           
                   <NavDropdown.Item className="text-dark navlink text-primary">

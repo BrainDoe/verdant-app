@@ -2,13 +2,13 @@ import React, {useState, useEffect} from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import {Link} from 'react-router-dom'
 import { Row, Col, Card } from 'react-bootstrap'
-import { User, Heart, Cart } from 'react-bootstrap-icons'
+import { Heart, Cart } from 'react-bootstrap-icons'
 import userIcon from './images/user-icon.png'
 import Message from './products/groceries/Message'
 import Loader from './products/groceries/Loader'
-// import { getUserDetails, userUpdateProfile } from '../actions/userActions'
-import { userUpdateProfile } from '../actions/userActions'
-// import { allUserDetails } from '../actions/userActions'
+// import { userUpdateProfile } from '../actions/userActions'
+import { getUserDetails, updateUserP } from '../actions/userActions'
+// import { userUpdateProfile } from '../actions/userActions'
 // import { userUpdateProfile } from '../actions/userActions'
 
 import cartSideIcon from './images/cart-side-icon.png'
@@ -27,35 +27,36 @@ const Profile = ({history, location}) => {
 
   const userDetails = useSelector(state => state.userDetails)
   const { loading, error, user } = userDetails
-  console.log(user)
+  // console.log(user)
 
   // Check if the user is logged in. If so bring in the user info
   const userLogin = useSelector(state => state.userLogin)
   const { userInfo } = userLogin
   // console.log(userInfo)
 
-  const userUpdateProfile = useSelector(state => state.userUpdateProfile)
-  const { success } = userUpdateProfile
+  const updateUser = useSelector(state => state.updateUser)
+  const { success } = updateUser
+  // console.log(success)
 
-  // useEffect(() => {
-  //   if(!userInfo) {
-  //     history.push('/login')
-  //   } else {
-  //     dispatch(getUserDetails())
-      // setFirstName(user.firstname)
-      // setLastName(user.lastname)
-      // setEmail(user.email)
-      // setPhone(user.phone)
-      // if(!user.firstname){
-      //   dispatch(getUserDetails())
-      // } else {
-      //   setFirstName(user.firstname)
-      //   setLastName(user.lastname)
-      //   setEmail(user.email)
-      //   setPhone(user.phone)
-      // }
-  //   }
-  // }, [dispatch, history, userInfo, user])
+  useEffect(() => {
+    if(!userInfo) {
+      history.push('/login')
+    } else {
+      dispatch(getUserDetails())
+      setFirstName(firstname)
+      setLastName(lastname)
+      setEmail(email)
+      setPhone(phone)
+      if(!userInfo.user.id){
+        dispatch(getUserDetails())
+      } else {
+        setFirstName(userInfo.user.name)
+        // setLastName(user.lastname)
+        setEmail(userInfo.user.email)
+        setPhone(userInfo.user.phone)
+      }
+    }
+  }, [dispatch, history, userInfo, user])
 
   const submitHandler = (e) => {
     e.preventDefault()
@@ -63,8 +64,7 @@ const Profile = ({history, location}) => {
       setMessage('Password do not match')
     } else {
       // UPDATE PROFILE
-      console.log(dispatch(userUpdateProfile({id: userInfo.user.id} )))
-      dispatch(userUpdateProfile({ id: userInfo.user.id, firstname, lastname, email, phone, password }))
+      dispatch(updateUserP({ id: userInfo.user.id, firstname, lastname, email, phone, password }))
     }
   }
 
@@ -132,15 +132,15 @@ const Profile = ({history, location}) => {
                   </Col>
                   <Col sm={12} md={6} lg={6}>
                     <div className="form-group">
-                      <label htmlFor="surname">Surname</label>
-                      <input className="surname" type="text" id="surname" placeholder="Surname" value={lastname} onChange={(e) => setLastName(e.target.value)}  />
+                      <label htmlFor="surname">Last Name</label>
+                      <input className="surname" type="text" id="surname" placeholder="Last Name" value={userInfo.user.name} onChange={(e) => setLastName(e.target.value)} />
                     </div>
                     <div className="form-group">
-                      <label htmlFor="password">Password</label>
-                      <input className="password" type="password" id="password" placeholder="Password" />
+                      <label htmlFor="phone">Phone</label>
+                      <input className="phone" type="phone" id="phone" placeholder="Phone" value={userInfo.user.phone} onChange={(e) => setPhone(e.target.value)} />
                     </div>
                     <div className="form-group">
-                      <label htmlFor="confirm-password">Confirm Password</label>
+                      <label htmlFor="confirm-password">Confirm New Password</label>
                       <input className="confirm-password" type="password" id="confirm-password" placeholder="Confirm Password" />
                     </div>
                   </Col>

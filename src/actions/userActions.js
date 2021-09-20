@@ -71,12 +71,12 @@ export const getUserDetails = () => async (dispatch, getState) => {
     })
 
     const { userLogin: {userInfo } } = getState()
-    console.log(userInfo.user)
+    // console.log(userInfo.user)
     const config = {
       'Content-Type': 'application/json',
       Authorization: `Bearer ${userInfo.token}`
     }
-    console.log(config.Authorization)
+    // console.log(config.Authorization)
 
     const {data} = await axios.get(`https://verdant-store.herokuapp.com/user/me`, config)
 
@@ -94,7 +94,7 @@ export const getUserDetails = () => async (dispatch, getState) => {
 }
 
 // Update User
-export const userUpdateProfile = (user) => async (dispatch, getState) => {
+export const updateUserP = (user) => async (dispatch, getState) => {
   try {
     dispatch({
       type: USER_UPDATE_PROFILE_REQUEST
@@ -107,7 +107,8 @@ export const userUpdateProfile = (user) => async (dispatch, getState) => {
       Authorization: `Bearer ${userInfo.token}`
     }
 
-    const {data} = await axios.put('https://verdant-store.herokuapp.com/user/updateme', user, config)
+    const data = await axios.put('https://verdant-store.herokuapp.com/user/updateme', user, config)
+    // console.log(`this data ${data}`)
 
     dispatch({
       type: USER_UPDATE_PROFILE_SUCCESS,

@@ -17,6 +17,9 @@ import Login from './components/Login';
 import Signup from './components/Signup';
 import FAQ from './components/FAQ';
 import Contact from './components/Contact';
+import Profile from './components/Profile';
+import Orders from './components/Orders';
+import SavedItems from './components/SavedItems';
 
 
 
@@ -26,9 +29,13 @@ const  App = () => {
       <Header />
       <Route path="/" component={Slider} exact />
       <main>
+        
+        <Route path="/login" component={Login}/>
+        <Route path="/signup" component={Signup}/>
         <Container>
           <Route path="/" component={Section} exact />
-          <Route path="/products/groceries" component={Groceries} />
+          <Route path="/products/groceries/:ref" component={Groceries} />
+          
           <Route path="/groceries/:id" component={GroceryDetail} />
           <Route path="/cart/:id?" component={Cart} />
 
@@ -36,13 +43,14 @@ const  App = () => {
           <Route path="/products/billPayment/crypto" component={ CryptoPayment } />
           <Route path="/products/invoiceUpload" component={ InvoiceUpload } />
           <Route path="/products/checkout" component={ Checkout } />
-          <Route path="/help/faq" component={FAQ}/>
-          <Route path="/help/contact" component={Contact}/>
+          <Route path="/help/faq" component={FAQ} />
+          <Route path="/help/contact" component={Contact} />        
+          <Route path="/profile"  component={Profile} />
+          <Route path="/orders"  component={Orders} />
+          <Route path="/saved-items"  component={SavedItems} />
 
         </Container>
         <Route path="/about"  component={About}/>
-        <Route path="/login" component={Login}/>
-        <Route path="/signup" component={Signup}/>
       </main>
       <Footer />
 

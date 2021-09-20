@@ -4,12 +4,12 @@ import  Message  from './Message'
 import { Row, Col, Card, Form, Button } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import image1 from '../../images/groceries-image/item1.png'
-import { Heart, HeartFill, TrashFill } from 'react-bootstrap-icons'
+import { Heart, TrashFill } from 'react-bootstrap-icons'
 import { addToCart, removeFromCart } from '../../../actions/cartAtions'
 // import { removeFromCart } from '../../../actions/cartAtions'
 
 const Cart = ({ match, location, history }) => {
-  const productId = match.params.id
+  const productRef = match.params.id
 
   const qty = location.search ? Number(location.search.split('=')[1]) : 1
 
@@ -19,10 +19,10 @@ const Cart = ({ match, location, history }) => {
   const { cartItems } = cart
 
   useEffect(() => {
-    if(productId) {
-      dispatch(addToCart(productId, qty))
+    if(productRef) {
+      dispatch(addToCart(productRef, qty))
     }
-  }, [dispatch, productId, qty])
+  }, [dispatch, productRef, qty])
 
   const removeFromcartHandler = (id) => {
     dispatch(removeFromCart(id))
@@ -43,14 +43,14 @@ const Cart = ({ match, location, history }) => {
 
       <Row>
         <Col md={8}>
-          <Row style={{ backgroundColor: '#E5E5E5' }}>
-            <Col md={6}>
+          <Row>
+            <Col md={6} className="cart-items-header">
               <p style={{ fontSize: '20px', fontWeight: '500',  paddingTop: '15px' }}>Product</p>
             </Col>
-            <Col md={3}>
+            <Col md={3} className="cart-items-header">
               <p style={{ fontSize: '20px', fontWeight: '500',  paddingTop: '15px' }}>Quantity</p>
             </Col>
-            <Col md={3}>
+            <Col md={3} className="cart-items-header">
             <p style={{ fontSize: '20px', fontWeight: '500',  paddingTop: '15px' }}>Price</p>
             </Col>
           </Row>
@@ -64,7 +64,6 @@ const Cart = ({ match, location, history }) => {
             <div>
               {cartItems.map(item => (
               
-          
                 <Row className="bg-white py-4" key={item.product}>
                   <Col md={6} className="py-4">
                     <div className="d-flex justify-space-between">
@@ -79,7 +78,7 @@ const Cart = ({ match, location, history }) => {
                       <div className="inc-wrapper mb-4 flex-fill">
                         <button className="minus-btn" onClick={() => dispatch(addToCart(item.product, item.qty > 1 ? item.qty-- : 1))}>&#8722;</button>
                         <span className="item-number">{item.qty}</span>
-                        <button className="plus-btn" onClick={() => dispatch(addToCart(item.product, item.qty++))}>&#43;</button>
+                        <button className="plus-btn" type="button" onClick={() => dispatch(addToCart(item.product, item.qty++))}>&#43;</button>
                       </div>
                     </div>
                   </Col>
@@ -108,17 +107,7 @@ const Cart = ({ match, location, history }) => {
             </div>
 
           )}
-          {/* <Row className="bg-white pb-3">
-            <Col md={12}>
-              <Heart className="mr-2 text-warning" size={20}/>
-              <span style={{ fontSize: '12px', fontWeight: '500', lineHeight: '16.14px', marginRight: '15px', color: '#F6C54C', cursor: 'pointer' }}>MOVE TO SAVED ITEMS</span> 
-                <span style={{ fontSize: '12px', fontWeight: '500', lineHeight: '16.14px', color: '#F6C54C', cursor: 'pointer' }}>
-                  <TrashFill className="mr-2 text-warning" size={20} />
-                  REMOVE
-                </span>
-            </Col>
           
-          </Row> */}
         </Col>
 
         <Col md={4}>

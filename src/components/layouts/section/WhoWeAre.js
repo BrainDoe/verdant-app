@@ -7,10 +7,10 @@ import { Link } from 'react-router-dom';
 
 const WhoWeAre = () => {
   return (
-    <div>
+    <>
       <Row>
         <Col sm={12} md={12} lg={12}>
-             <h5 style={wraper}>WHO WE ARE</h5>
+          <h5 className="ourProduct">WHO WE ARE</h5>
         </Col>
       </Row>
       <Row>
@@ -22,14 +22,15 @@ const WhoWeAre = () => {
               <div style={blue}>
               </div>
             </div>
-            <p className="para">
+            <p className="para" style={{ marginLeft: '1rem' }}>
               "Our duty is not to fight the 
-              disruption, but to embrace it."
+              disruption, <br /> but to embrace it."
             </p>
           </div>
+          <p className="product-text">Instead of focusing on improving traditional cash remittance, <br /> <strong> <span className="text-warning"> Bud </span> <span className="text-primary">Logistics</span></strong> has created a product and platform that can render cash remittance obsolete</p>
         </Col>
         <Col sm={12} md={6} lg={6}>
-          <div className="">
+          <div>
             <p style={textWho}>
               The next generation of Financial Services will be fundamentally different.
             </p>
@@ -45,32 +46,25 @@ const WhoWeAre = () => {
           </LinkContainer>
         </Col>
       </Row>
-    </div>
+    </>
   )
 }
 
-const wraper = {
-    fontFamily: 'Heebo',
-    fontStyle: 'normal',
-    fontWeight:' 500',
-    fontSize: '36px',
-    lineHeight: '173.5%',
-    color: '#3785F7'
-}
+
 
 
 
 const yello = {
  backgroundColor: '#F6C54C',
   width: '1px',
-  height: '36px',
+  height: '20px',
   border: '2px solid #F6C54C',
 }
 
 const blue = {
   backgroundColor: '#3785F7',
   width: '1px',
-  height: '36px',
+  height: '20px',
   border: '2px solid #3785F7',
 }
 
@@ -78,26 +72,31 @@ const textWho = {
   fontStyle: 'normal',
   fontWeight: 'normal',
   fontSize: '16px',
-  lineHeight: '167.77%',
+  // lineHeight: '167.77%',
   textAlign: 'justify',
-  letterSpacing: '0.035em', 
+  // letterSpacing: '0.035em',
+  fontFamily: 'heebo' 
 }
 
 const linkMore = {
   fontStyle: 'normal',
   fontWeight: 'bold',
-  fontWize: '14px',
+  fontSize: '14px',
   lineHeight: '111%',
   textAlign: 'center',
   letterSpacing: '0.035em',
   color: ' #3785F7',
-  cursor: 'pointer'
+  cursor: 'pointer',
+  fontFamily: 'heebo'
 }
 
 
 
 WhoWeAre.propTypes = {
-  wraper: PropTypes.object.isRequired,
+  linkMore: PropTypes.object.isRequired,
+  textWho: PropTypes.object.isRequired,
+  blue: PropTypes.object.isRequired,
+  yello: PropTypes.object.isRequired,
 }
 
 

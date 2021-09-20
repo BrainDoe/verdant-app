@@ -20,7 +20,7 @@ const About = () => {
               <div style={blue}>
               </div>
             </div>
-            <p className="para text-dark">
+            <p className="para text-dark ml-3">
               "Our duty is not to fight the 
               disruption, but to embrace it."
             </p>
@@ -86,8 +86,8 @@ const About = () => {
         </Col>
       </Row>
       </div>
-      <div className="about-map">
-      
+      <div className="">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m24!1m12!1m3!1d126868.31206360814!2d3.346959903992507!3d6.440927427916407!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m9!3e6!4m3!3m2!1d6.4515031!2d3.2758920999999996!4m3!3m2!1d6.440843!2d3.417265!5e0!3m2!1sen!2sng!4v1631630096474!5m2!1sen!2sng" width="100%" height="450" style={{ border: "0" }} allowfullscreen="" loading="lazy"></iframe>
       </div>
     </div>
   )

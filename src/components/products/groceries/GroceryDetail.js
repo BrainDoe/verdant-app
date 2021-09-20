@@ -1,13 +1,12 @@
 import React, { useState, useEffect} from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import item1lg from '../../images/groceries-image/item-lg.png'
 import image1 from '../../images/groceries-image/item1.png'
 import { Col, Row, Card } from 'react-bootstrap'
-import { ChevronRight, Facebook, Twitter, Linkedin, Cursor, Heart, HeartFill } from 'react-bootstrap-icons'
-import { LinkContainer } from 'react-router-bootstrap'
+import { ChevronRight, Facebook, Twitter, Linkedin, Cursor, Heart} from 'react-bootstrap-icons'
 import { listProductDetails } from '../../../actions/productActions'
 import Loader from './Loader'
 import Message from './Message'
+import { Link } from 'react-router-dom';
 
 const GroceryDetail = ({ history, match }) => {
   let [qty, setQty ] = useState(1)
@@ -17,6 +16,7 @@ const GroceryDetail = ({ history, match }) => {
 
   const productDetails = useSelector(state => state.productDetails)
   const { loading, error, product } = productDetails
+  // console.log(product)
 
   useEffect(() => {
     dispatch(listProductDetails(match.params.id))
@@ -48,7 +48,7 @@ const GroceryDetail = ({ history, match }) => {
                     <Col md={6}>
                       <div>
                         {/* <img src={item1lg} className="img-fluid" alt="Grocery Item" /> */}
-                        <img src={product.image} className="img-fluid" alt="Grocery Item" />
+                        <img src={product.image} className="img-fluid" alt="Grocery Item" style={{ height: '500px' }}/>
                       </div>
                     </Col>
                     <Col md={6}>
@@ -56,7 +56,7 @@ const GroceryDetail = ({ history, match }) => {
                         <h4 className="mt-3" style={{ fontSize: '30px', fontWeight: '500' }}>{product.title}</h4>
                         <p style={{ fontSize: '20px', fontWeight: '500' }}>Product Code: <strong>12345</strong></p>
                         <hr />
-                        <h5 className="text-primary" style={{ fontSize: '26px', fontWeight: '500' }}>N {product.price}</h5>
+                        <h5 className="text-primary" style={{ fontSize: '26px', fontWeight: '500' }}>$ {product.price}</h5>
                         <hr />
 
                         <div className="d-flex justify-content-even">
@@ -77,18 +77,18 @@ const GroceryDetail = ({ history, match }) => {
                         <hr />
                         <div>
                           <p style={{ fontSize: '20px', fontWeight: '400' }}>Share Product</p>
-                          <a href="#">
+                          <Link to="/">
                             <Facebook size={35} className="mr-2" />
-                          </a>
-                          <a href="#">
+                          </Link>
+                          <Link to="/">
                             <Twitter size={35} className="mr-2 bg-primary p-1 rounded-circle text-white" />
-                          </a>
-                          <a href="#" className="">
+                          </Link>
+                          <Link to="/" className="">
                             <Linkedin size={35} className="rounded-circle text-primary mr-2" />
-                          </a>
-                          <a href="#" className="">
+                          </Link>
+                          <Link to="/" className="">
                             <Cursor size={35} className="rounded-circle text-white bg-dark p-1" />
-                          </a>
+                          </Link>
                         </div>
                       </div>
                     </Col>
@@ -114,18 +114,14 @@ const GroceryDetail = ({ history, match }) => {
               <div class="owl-carousel">
               <Card className="m-4 bg-white" style={{ width: '207', height: '185', borderRadius: '3px' }}>
                   <div className="py-3 px-3 bg-white">
-                  <LinkContainer to={`/groceries/`}>
-                    <a className="text-decoration-none">
-                        <img src={image1} alt="Grocery Item"  className="card-img" alt="Grocery Item" />
-                    </a>
-                  </LinkContainer>
+                    <Link to={`/groceries/`} className="text-decoration-none">
+                        <img src={image1} className="card-img" alt="Grocery Item" />
+                    </Link>
                     <div className="mt-3">
                       <div className="d-flex justify-between">
-                      <LinkContainer to={`/groceries/`}>
-                        <a className="text-decoration-none">
+                        <Link to={`/groceries/`} className="text-decoration-none">
                           <p className="card-title text-dark" style={{ fontSize: '16px', fontWeight: '400' }}>{}</p>
-                        </a>
-                      </LinkContainer>
+                        </Link>
                         <span className="ml-auto">
                           <Heart size={25} className="text-warning" style={{ cursor: 'pointer' }}></Heart>  
                         </span>

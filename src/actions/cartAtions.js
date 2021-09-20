@@ -2,7 +2,11 @@ import axios from 'axios'
 import { CART_ADD_ITEM, CART_REMOVE_ITEM } from '../constants/cartConstant'
 
 export const addToCart = (id, qty ) => async (dispatch, getState) => {
+
+ 
+
   const { data } = await axios.get(`https://fakestoreapi.com/products/${id}`)
+  console.log(data)
 
   dispatch({
     type: CART_ADD_ITEM,

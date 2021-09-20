@@ -6,32 +6,66 @@ import image3 from '../../images/groceries-image/item3.png'
 import image4 from '../../images/groceries-image/item4.png'
 import image5 from '../../images/groceries-image/item5.png'
 import { Col, Row, DropdownButton, Dropdown, Card, Nav } from 'react-bootstrap'
-import { ChevronRight, HeartFill, Heart } from 'react-bootstrap-icons'
+import { ChevronRight } from 'react-bootstrap-icons'
 import Accordion  from './Accordion';
-// import axios from 'axios'
+import axios from 'axios'
 import GroceryProduct from './GroceryProduct'
-import { listProducts } from '../../../actions/productActions'
 import Loader from './Loader'
 import Message from './Message'
+import { listProducts } from '../../../actions/productActions'
+import { getCategories } from '../../../actions/categoriesActions'
+import { Link } from 'react-router-dom'
+
 
 const Groceries = () => {
   const [qty, setQty ] = useState(0)
 
   const dispatch = useDispatch()
+
   const productList = useSelector(state => state.productList)
   const {loading, error, products} = productList 
 
+  const categoryItem = useSelector(state => state.categories)
+  const {categories} = categoryItem 
+
   // const [products, setProduct] = useState([])
+  const [productCategories, setProductCategories] = useState([])
+  const [singleProduct, setSingleProduct] = useState({})
 
   useEffect(() => {
+
     // const fetchProducts = async () => {
     //   const {data} = await axios.get('https://verdant-store.herokuapp.com/product/catalog');
     //   setProduct(data.products);
-    // };
-    // fetchProducts();
+    // }
+
+
+    const fetchProductsCategories = async () => {
+      const {data} = await axios.get('https://verdant-store.herokuapp.com/product/categories');
+      
+      setProductCategories(data.categories)
+    };
+    fetchProductsCategories()
+
+    const fetchSubCatItems = async () => {
+      const {data } = await axios.get('https://verdant-store.herokuapp.com/product/catalog/subcategory/U62bhrRbwQ7YK4egCB1F1/JDRYJTWDNl6JYqmPiANLV')
+      data.products.map(product => console.log(product.name))
+    }
+    fetchSubCatItems()
+    
+
 
     dispatch(listProducts())
   }, [dispatch]);
+
+  // const fetchProductsCategories = async () => {
+  //   const {data} = await axios.get('https://verdant-store.herokuapp.com/product/categories');
+  //   // setProductCategories(data);
+  //   const item = data.categories.map(cat => {
+  //     // cat.sub_categories.map(subcat => console.log(subcat.name))
+  //   })
+  // };
+  // fetchProductsCategories()
 
 
   return (
@@ -52,18 +86,33 @@ const Groceries = () => {
       
       <section className="p-3 my-5">
       <Row>
-        <Col md={3} className="px-0">
+        <Col as="div" sm={12} md={3} className="px-0">
           <Card className="mb-5">
             <Accordion title="Category" style={{ fontSize: '20px', fontWeight: '500' }}>
               <Card.Body>
-                <Nav defaultActiveKey="/" className="flex-column footer-nav">
+                {productCategories.map(cat => (
+                 
+                  <div>
+                    <Nav defaultActiveKey="/" className="flex-column footer-nav">
+                      
+                        {cat.sub_categories.map(subCat => (
+                         <Link to={`/products/groceries/${cat.ref}/${subCat.ref}`} className="text-decoration-none">
+                          <Nav.Link className="text-dark" style={{ fontSize: '16px', fontWeight: '400' }} >
+                            {subCat.name}
+                          </Nav.Link>
+                          </Link>
+                        ))}
+                    </Nav>    
+                  </div>
+                ))}
+                {/* <Nav defaultActiveKey="/" className="flex-column footer-nav">
                   <Nav.Link href="#" className="text-dark" style={{ fontSize: '16px', fontWeight: '400' }}>Beverages and Cereals </Nav.Link>
                   <Nav.Link href="#" className="text-dark" style={{ fontSize: '16px', fontWeight: '400' }}>Rice, Pasta, Noodles</Nav.Link>
                   <Nav.Link href="#" className="text-dark" style={{ fontSize: '16px', fontWeight: '400' }}>Yam</Nav.Link>
                   <Nav.Link href="#" className="text-dark" style={{ fontSize: '16px', fontWeight: '400' }}>Beans</Nav.Link>
                   <Nav.Link href="#" className="text-dark" style={{ fontSize: '16px', fontWeight: '400' }}>Fruits and Juices</Nav.Link>
                   <Nav.Link href="#" className="text-dark" style={{ fontSize: '16px', fontWeight: '400' }}>Processed</Nav.Link>
-                </Nav>
+                </Nav> */}
               </Card.Body>
             </Accordion>
           </Card>
@@ -102,45 +151,47 @@ const Groceries = () => {
                 </Nav>
               </Card.Body>
             </Accordion>
-          </Card>
-            
+          </Card>            
         </Col>
 
         {/* /Product->Category->Grocery->Items */}
         <Col md={9} className="px-0 groceries-container">
-          <Card>
-            <Row>
-              <Col md={6} sm={12}>        
-                <div className="pt-4 mx-4">
-                  <h5 className="text-dark" style={{ fontSize: '18px', fontWeight: '500' }}>Beverage and Cereals</h5>
-                </div>
-              </Col>
-              <Col md={6} sm={12}>
-                <div className="pt-4 mx-4 d-flex align-items-center justify-content-center">
-                  <span style={{fontSize: '14px', fontWeight: '400', marginRight: '10px' }}>Sort By:</span>
-                  <DropdownButton id="dropdown-basic-button" title="New Products" className="ms-4 sorted-btn" id="sorted-btn" style={{ fontSize: '12px', fontWeight: '400', backgroundColor: '#C4C4C436' }}>
-                    <Dropdown.Item href="#" className="text-dark navlink" style={{ fontSize: '12px', fontWeight: '500' }}>New Products</Dropdown.Item>
-                    <Dropdown.Item href="#" className="text-dark navlink" style={{ fontSize: '12px', fontWeight: '400' }}>Price - Low to High</Dropdown.Item>
-                    <Dropdown.Item href="#" className="text-dark navlink" style={{ fontSize: '12px', fontWeight: '400' }}>Price - High to Low</Dropdown.Item>
-                  </DropdownButton>
-                </div>
-              </Col>
-            </Row>
+          <div className="card-wrapper">
 
-            <hr />
-
-            {loading ? <Loader /> : error ? <Message variant="danger">{error} </Message> : (
-
+            <Card className="pb-5">
               <Row>
-                {products.map(product => (
-                  <Col sm={12} md={6} lg={4} key={product.id}> 
-                    <GroceryProduct product={product} key={product.id}/>
-                  </Col>
-                ))}             
+                <Col md={6} sm={12}>        
+                  <div className="pt-4 mx-4">
+                    <h5 className="text-dark grocery-header-text" style={{ fontSize: '18px', fontWeight: '500' }}>Beverage and Cereals</h5>
+                  </div>
+                </Col>
+                <Col md={6} sm={12}>
+                  <div className="pt-4 mx-4 d-flex align-items-center justify-content-center">
+                    <span style={{fontSize: '14px', fontWeight: '400', marginRight: '10px' }}>Sort By:</span>
+                    <DropdownButton id="dropdown-basic-button" title="New Products" className="ms-4 sorted-btn" id="sorted-btn" style={{ fontSize: '12px', fontWeight: '400', backgroundColor: '#C4C4C436' }}>
+                      <Dropdown.Item href="#" className="text-dark navlink" style={{ fontSize: '12px', fontWeight: '500' }}>New Products</Dropdown.Item>
+                      <Dropdown.Item href="#" className="text-dark navlink" style={{ fontSize: '12px', fontWeight: '400' }}>Price - Low to High</Dropdown.Item>
+                      <Dropdown.Item href="#" className="text-dark navlink" style={{ fontSize: '12px', fontWeight: '400' }}>Price - High to Low</Dropdown.Item>
+                    </DropdownButton>
+                  </div>
+                </Col>
               </Row>
-            )}
 
-          </Card>
+              <hr />
+
+              {loading ? <Loader /> : error ? <Message variant="danger">{error} </Message> : (
+
+                <Row>
+                  {products.map(product => (
+                    <Col sm={12} md={4} key={product.id} className="mb-3 mx-auto">
+                      <GroceryProduct product={product} key={product.id} />
+                    </Col>
+                  ))}             
+                </Row>
+              )}
+
+            </Card>
+          </div>
         </Col>
       </Row>
       </section>

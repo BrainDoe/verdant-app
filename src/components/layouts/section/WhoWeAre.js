@@ -7,7 +7,7 @@ import ImageHome from '../../images/homepage-multi-icons.png'
 const WhoWeAre = () => {
   return (
     <>
-      <Row>
+      <Row className="pb-4">
         <Col sm={12} md={12} lg={12}>
           <h5 className="ourProduct">Remittance Problems</h5>
         </Col>
@@ -16,7 +16,7 @@ const WhoWeAre = () => {
         <Col sm={12} md={6} lg={6} className="">
           <div className="row">
             <div className="col-md-6">
-              <div className=" card mb-4 mt-2">
+              <div className=" card card-outline-primary mb-4 mt-2">
                 <div className="remittanc-icon">
                   <Clock size={40} className="text-primary bg-white rounded-circle"/>
                 </div>

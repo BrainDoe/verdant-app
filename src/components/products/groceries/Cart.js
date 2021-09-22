@@ -3,11 +3,8 @@ import { useDispatch, useSelector } from 'react-redux'
 import  Message  from './Message'
 import { Row, Col, Card, Form, Button } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
-import image1 from '../../images/groceries-image/item1.png'
 import { Heart, TrashFill } from 'react-bootstrap-icons'
 import { addToCart, removeFromCart } from '../../../actions/cartAtions'
-import { login } from '../../../actions/userActions'
-import axios from 'axios'
 
 const Cart = ({ match, location, history }) => {
   const productId = match.params.id
@@ -21,41 +18,6 @@ const Cart = ({ match, location, history }) => {
 
   const userLogin = useSelector(state => state.userLogin)
   const { loading, error, userInfo } = userLogin
-
-  // const [carts, setCarts] = useState({})
-
-  // const config = {
-  //   'Content-Type': 'application/json',
-  //   Authorization: `Bearer ${userInfo.token}`
-  // }
-
-  // details = {
-  //   // "product_ref": productRef,
-  //   // "quantity": qty,
-  //   // "amount": "",
-  //   // "beneficiary": ""
-  // }
-
-  // const getCart = async () => {
-  //   const { data } = await axios.get('https://verdant-store.herokuapp.com/product/cart')
-  //   setCarts(data)
-  // }
-
-  // const addToCart = async (productRef, qty, cost) => {
-  //     const config = {
-  //       'Content-Type': 'application/json',
-  //       Authorization: `Bearer ${userInfo.token}`
-  //     }
-
-  //   const details = {
-  //       product_ref: productRef,
-  //       quantity: qty,
-  //       amount: cost,
-  //       beneficiary: ""
-  //     }
-  //     const { data } = await axios.post('https://verdant-store.herokuapp.com/product/cart', config, details)
-  //     setCarts(data)
-  // }
 
   useEffect(() => {
     if(productId) {

@@ -1,13 +1,11 @@
 import React, { useState, useEffect} from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import image1 from '../../images/groceries-image/item1.png'
 import { Col, Row, Card } from 'react-bootstrap'
 import { ChevronRight, Facebook, Twitter, Linkedin, Cursor, Heart} from 'react-bootstrap-icons'
 import { listProductDetails } from '../../../actions/productActions'
 import Loader from './Loader'
 import Message from './Message'
 import { Link } from 'react-router-dom';
-import OwlCarousel from 'react-owl-carousel';
 import 'owl.carousel/dist/assets/owl.carousel.css';
 import 'owl.carousel/dist/assets/owl.theme.default.css';
 import LatestProducts from '../../layouts/section/LatestProducts'
@@ -20,13 +18,11 @@ const GroceryDetail = ({ history, match }) => {
 
   const productDetails = useSelector(state => state.productDetails)
   const { loading, error, product } = productDetails
-  // console.log(product)
 
   useEffect(() => {
     dispatch(listProductDetails(match.params.id))
   }, [dispatch, match])
 
-  // const product = {}
   const addToCartHandler = () => {
     history.push(`/cart/${match.params.id}?quantity=${qty}`)
   }
@@ -51,7 +47,6 @@ const GroceryDetail = ({ history, match }) => {
                   <Row className="mb-4">
                     <Col md={6}>
                       <div>
-                        {/* <img src={item1lg} className="img-fluid" alt="Grocery Item" /> */}
                         <img src={product.image} className="img-fluid" alt="Grocery Item" style={{ height: '500px' }}/>
                       </div>
                     </Col>
@@ -73,11 +68,9 @@ const GroceryDetail = ({ history, match }) => {
                               <button type="button" className="plus-btn" onClick={() => setQty(qty++)}>&#43;</button>
                             </div>
                         </div>
-                        {/* <LinkContainer to={`/cart/${product.id}`}> */}
                           <div style={{ width: '300px' }}>
                             <button className="btn btn-block btn-primary" style={{ fontSize: '18px', fontWeight: '500' }} onClick={addToCartHandler}>Add To Cart</button>
                           </div>
-                        {/* </LinkContainer> */}
                         <hr />
                         <div>
                           <p style={{ fontSize: '20px', fontWeight: '400' }}>Share Product</p>
@@ -118,32 +111,6 @@ const GroceryDetail = ({ history, match }) => {
               <div className="card card-body">
                 <LatestProducts />
               </div>
-
-               {/* <OwlCarousel className='owl-theme' loop margin={10} responsiveClass={true} items={2} nav>
-                <div className="items">
-                    <Card className="m-4 bg-white" style={{ width: '207', height: '185', borderRadius: '3px' }}>
-                  <div className="py-3 px-3 bg-white">
-                    <Link to={`/groceries/`} className="text-decoration-none">
-                        <img src={image1} className="card-img" alt="Grocery Item" />
-                    </Link>
-                    <div className="mt-3">
-                      <div className="d-flex justify-between">
-                        <Link to={`/groceries/`} className="text-decoration-none">
-                          <p className="card-title text-dark" style={{ fontSize: '16px', fontWeight: '400' }}>{}</p>
-                        </Link>
-                        <span className="ml-auto">
-                          <Heart size={25} className="text-warning" style={{ cursor: 'pointer' }}></Heart>  
-                        </span>
-                      </div>
-                      <div className="card-text text-dark">
-                        <h5 style={{ fontSize: '18px', fontWeight: '500' }}>${}</h5>
-                      </div>
-                      <button type="submit" className="btn btn-block btn-outline-primary" style={{ fontSize: '14px', fontWeight: '500' }}>Add To Cart</button>
-                    </div>
-                  </div>
-                </Card>
-                </div>
-              </OwlCarousel> */}
             </Col>
           </Row>
         </div>

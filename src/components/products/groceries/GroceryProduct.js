@@ -9,22 +9,6 @@ import { addToCart } from '../../../actions/cartAtions';
 
 const GroceryProduct = ({product}) => {
 
-  let [qty, setQty ] = useState(1)
-
-  const dispatch = useDispatch()
-
-  const cart = useSelector(state => state.cart)
-  const { cartItems } = cart
-
-  // const qty = 1;
-  
-  // const addItemToCart = (id, qty) => {
-  //   if(!cartItems.id) {
-  //     dispatch(addToCart(id))
-  //     console.log(id);
-  //   } 
-  // }
-
   return (
     <>
       <Card className="bg-white" style={{ borderRadius: '3px'}}>

@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { useParams } from 'react-router'
-import image1 from '../../images/groceries-image/item1.png'
 import image2 from '../../images/groceries-image/grocery-banner.png'
 import image3 from '../../images/groceries-image/item3.png'
 import image4 from '../../images/groceries-image/item4.png'
@@ -26,31 +24,10 @@ const Groceries = ({match, location, history}) => {
   const productList = useSelector(state => state.productList)
   const {loading, error, products} = productList 
 
-  // const categoryItem = useSelector(state => state.categories)
-  // const {categories} = categoryItem 
-
-  // const [products, setProduct] = useState([])
+ 
   const [productCategories, setProductCategories] = useState([])
-  const [fetchProducts, setAllProducts] = useState([])
-  const [fetchSubCategory, setFetchSubCategory] = useState([])
-  const [singleProduct, setSingleProduct] = useState({})
-
 
   useEffect(() => {
-
-    // const fetchProducts = async () => {
-    //   const {data} = await axios.get('https://verdant-store.herokuapp.com/product/catalog');
-    //   setProduct(data.products);
-    // }
-
-
-    // const fetchAllProducts = async () => {
-    //   const {data} = await axios.get('https://verdant-store.herokuapp.com/product/catalog');
-      
-    //   setAllProducts(data.products)
-    //   // console.log(data.products);
-    // };
-    // fetchAllProducts()
 
 
     const fetchProductsCategories = async () => {
@@ -60,39 +37,9 @@ const Groceries = ({match, location, history}) => {
     };
     fetchProductsCategories()
 
-    // const fetchSubCatItems = async () => {
-    //   const {data } = await axios.get('https://verdant-store.herokuapp.com/product/catalog/subcategory/U62bhrRbwQ7YK4egCB1F1/JDRYJTWDNl6JYqmPiANLV')
-    //   // data.products.map(product => console.log(product.name))
-    // }
-    // fetchSubCatItems()
-
     
-   
-    // const qty = location.search ? Number(location.search.split('=')[1]) : 1
-    
-    // const fetchSubCatItems = async (catRef, subCatRef) => {
-    //   const {data } = await axios.get(`https://verdant-store.herokuapp.com/product/catalog/subcategory/${catRef}/${subCatRef}`)
-
-    //   setFetchSubCategory(data.products)
-    //   console.log(data.products);
-    // }
-    // fetchSubCatItems()
-    
-
-
     dispatch(listProducts())
   }, [dispatch]);
-
-  // const cref = location.search ? location.search.split('/')[2] : 'asdfa'
-  // console.log(cref);
-  // const fetchProductsCategories = async () => {
-  //   const {data} = await axios.get('https://verdant-store.herokuapp.com/product/categories');
-  //   // setProductCategories(data);
-  //   const item = data.categories.map(cat => {
-  //     // cat.sub_categories.map(subcat => console.log(subcat.name))
-  //   })
-  // };
-  // fetchProductsCategories()
 
 
   return (
@@ -131,14 +78,6 @@ const Groceries = ({match, location, history}) => {
                     </Nav>    
                   </div>
                 ))}
-                {/* <Nav defaultActiveKey="/" className="flex-column footer-nav">
-                  <Nav.Link href="#" className="text-dark" style={{ fontSize: '16px', fontWeight: '400' }}>Beverages and Cereals </Nav.Link>
-                  <Nav.Link href="#" className="text-dark" style={{ fontSize: '16px', fontWeight: '400' }}>Rice, Pasta, Noodles</Nav.Link>
-                  <Nav.Link href="#" className="text-dark" style={{ fontSize: '16px', fontWeight: '400' }}>Yam</Nav.Link>
-                  <Nav.Link href="#" className="text-dark" style={{ fontSize: '16px', fontWeight: '400' }}>Beans</Nav.Link>
-                  <Nav.Link href="#" className="text-dark" style={{ fontSize: '16px', fontWeight: '400' }}>Fruits and Juices</Nav.Link>
-                  <Nav.Link href="#" className="text-dark" style={{ fontSize: '16px', fontWeight: '400' }}>Processed</Nav.Link>
-                </Nav> */}
               </Card.Body>
             </Accordion>
           </Card>

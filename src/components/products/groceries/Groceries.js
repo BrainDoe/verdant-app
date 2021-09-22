@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
+import { useParams } from 'react-router'
 import image1 from '../../images/groceries-image/item1.png'
 import image2 from '../../images/groceries-image/grocery-banner.png'
 import image3 from '../../images/groceries-image/item3.png'
@@ -13,11 +14,11 @@ import GroceryProduct from './GroceryProduct'
 import Loader from './Loader'
 import Message from './Message'
 import { listProducts } from '../../../actions/productActions'
-import { getCategories } from '../../../actions/categoriesActions'
 import { Link } from 'react-router-dom'
 
 
-const Groceries = () => {
+const Groceries = ({match, location, history}) => {
+
   const [qty, setQty ] = useState(0)
 
   const dispatch = useDispatch()
@@ -25,12 +26,13 @@ const Groceries = () => {
   const productList = useSelector(state => state.productList)
   const {loading, error, products} = productList 
 
-  const categoryItem = useSelector(state => state.categories)
-  const {categories} = categoryItem 
 
   // const [products, setProduct] = useState([])
   const [productCategories, setProductCategories] = useState([])
+  const [fetchProducts, setAllProducts] = useState([])
+  const [fetchSubCategory, setFetchSubCategory] = useState([])
   const [singleProduct, setSingleProduct] = useState({})
+
 
   useEffect(() => {
 
@@ -40,6 +42,15 @@ const Groceries = () => {
     // }
 
 
+    // const fetchAllProducts = async () => {
+    //   const {data} = await axios.get('https://verdant-store.herokuapp.com/product/catalog');
+      
+    //   setAllProducts(data.products)
+    //   // console.log(data.products);
+    // };
+    // fetchAllProducts()
+
+
     const fetchProductsCategories = async () => {
       const {data} = await axios.get('https://verdant-store.herokuapp.com/product/categories');
       
@@ -47,17 +58,31 @@ const Groceries = () => {
     };
     fetchProductsCategories()
 
-    const fetchSubCatItems = async () => {
-      const {data } = await axios.get('https://verdant-store.herokuapp.com/product/catalog/subcategory/U62bhrRbwQ7YK4egCB1F1/JDRYJTWDNl6JYqmPiANLV')
-      data.products.map(product => console.log(product.name))
-    }
-    fetchSubCatItems()
+    // const fetchSubCatItems = async () => {
+    //   const {data } = await axios.get('https://verdant-store.herokuapp.com/product/catalog/subcategory/U62bhrRbwQ7YK4egCB1F1/JDRYJTWDNl6JYqmPiANLV')
+    //   // data.products.map(product => console.log(product.name))
+    // }
+    // fetchSubCatItems()
+
+    
+   
+    // const qty = location.search ? Number(location.search.split('=')[1]) : 1
+    
+    // const fetchSubCatItems = async (catRef, subCatRef) => {
+    //   const {data } = await axios.get(`https://verdant-store.herokuapp.com/product/catalog/subcategory/${catRef}/${subCatRef}`)
+
+    //   setFetchSubCategory(data.products)
+    //   console.log(data.products);
+    // }
+    // fetchSubCatItems()
     
 
 
     dispatch(listProducts())
   }, [dispatch]);
 
+  // const cref = location.search ? location.search.split('/')[2] : 'asdfa'
+  // console.log(cref);
   // const fetchProductsCategories = async () => {
   //   const {data} = await axios.get('https://verdant-store.herokuapp.com/product/categories');
   //   // setProductCategories(data);
@@ -96,10 +121,9 @@ const Groceries = () => {
                     <Nav defaultActiveKey="/" className="flex-column footer-nav">
                       
                         {cat.sub_categories.map(subCat => (
-                         <Link to={`/products/groceries/${cat.ref}/${subCat.ref}`} className="text-decoration-none">
-                          <Nav.Link className="text-dark" style={{ fontSize: '16px', fontWeight: '400' }} >
-                            {subCat.name}
-                          </Nav.Link>
+                          
+                         <Link to={`/products/groceries/${cat.ref}/${subCat.ref}`} className="text-decoration-none text-dark">
+                            {subCat.name}                         
                           </Link>
                         ))}
                     </Nav>    

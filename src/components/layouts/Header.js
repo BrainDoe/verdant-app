@@ -53,14 +53,14 @@ const Header = () => {
               <Nav.Link  className="mr-3 text-dark">About Us</Nav.Link>
             </LinkContainer>
             <NavDropdown className="mr-3 text-dark color" title="Products" id="basic-nav-dropdown" style={{ fontSize: '18px', fontWeight: '400' }}>
-              {productCategories.map(cat => (
+              {/* {productCategories.map(cat => ( */}
 
                 <div>
-                    <LinkContainer to={`/products/groceries/${cat.ref}`}  style={{ fontSize: '12px', fontWeight: '400' }}>           
-                      <NavDropdown.Item className="text-dark navlink">{cat.category}</NavDropdown.Item>
+                    <LinkContainer to="/products/groceries" style={{ fontSize: '12px', fontWeight: '400' }}>           
+                      <NavDropdown.Item className="text-dark navlink">Groceries</NavDropdown.Item>
                     </LinkContainer>
                 </div>
-              ))}
+              {/* ))} */}
                 {/* Bill Payment Link */}
                  <LinkContainer to="/products/billPayment" style={{ fontSize: '12px', fontWeight: '400' }}>           
                   <NavDropdown.Item className="text-dark navlink text-primary">

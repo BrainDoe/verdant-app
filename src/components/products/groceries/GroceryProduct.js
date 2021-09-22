@@ -1,10 +1,30 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 import { Card } from 'react-bootstrap'
 import { Heart} from 'react-bootstrap-icons'
 import image1 from '../../images/groceries-image/item1.png'
 import { Link } from 'react-router-dom';
+import { addToCart } from '../../../actions/cartAtions';
+
 
 const GroceryProduct = ({product}) => {
+
+  let [qty, setQty ] = useState(1)
+
+  const dispatch = useDispatch()
+
+  const cart = useSelector(state => state.cart)
+  const { cartItems } = cart
+
+  // const qty = 1;
+  
+  // const addItemToCart = (id, qty) => {
+  //   if(!cartItems.id) {
+  //     dispatch(addToCart(id))
+  //     console.log(id);
+  //   } 
+  // }
+
   return (
     <>
       <Card className="bg-white" style={{ borderRadius: '3px'}}>
@@ -26,7 +46,7 @@ const GroceryProduct = ({product}) => {
             <div className="card-text text-dark">
               <h5 style={{ fontSize: '18px', fontWeight: '500' }}>${product.price}</h5>
             </div>
-            <button type="submit" className="btn btn-block btn-outline-primary" style={{ fontSize: '14px', fontWeight: '500' }}>Add To Cart</button>
+            <button type="button" className="btn btn-block btn-outline-primary" style={{ fontSize: '14px', fontWeight: '500'}}>Add To Cart</button>
           </div>
         </div>
       </Card>

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, {useState, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import  Message  from './Message'
 import { Row, Col, Card, Form, Button } from 'react-bootstrap'
@@ -6,10 +6,11 @@ import { Link } from 'react-router-dom'
 import image1 from '../../images/groceries-image/item1.png'
 import { Heart, TrashFill } from 'react-bootstrap-icons'
 import { addToCart, removeFromCart } from '../../../actions/cartAtions'
-// import { removeFromCart } from '../../../actions/cartAtions'
+import { login } from '../../../actions/userActions'
+import axios from 'axios'
 
 const Cart = ({ match, location, history }) => {
-  const productRef = match.params.id
+  const productId = match.params.id
 
   const qty = location.search ? Number(location.search.split('=')[1]) : 1
 
@@ -18,18 +19,60 @@ const Cart = ({ match, location, history }) => {
   const cart = useSelector(state => state.cart)
   const { cartItems } = cart
 
-  useEffect(() => {
-    if(productRef) {
-      dispatch(addToCart(productRef, qty))
-    }
-  }, [dispatch, productRef, qty])
+  const userLogin = useSelector(state => state.userLogin)
+  const { loading, error, userInfo } = userLogin
 
+  // const [carts, setCarts] = useState({})
+
+  // const config = {
+  //   'Content-Type': 'application/json',
+  //   Authorization: `Bearer ${userInfo.token}`
+  // }
+
+  // details = {
+  //   // "product_ref": productRef,
+  //   // "quantity": qty,
+  //   // "amount": "",
+  //   // "beneficiary": ""
+  // }
+
+  // const getCart = async () => {
+  //   const { data } = await axios.get('https://verdant-store.herokuapp.com/product/cart')
+  //   setCarts(data)
+  // }
+
+  // const addToCart = async (productRef, qty, cost) => {
+  //     const config = {
+  //       'Content-Type': 'application/json',
+  //       Authorization: `Bearer ${userInfo.token}`
+  //     }
+
+  //   const details = {
+  //       product_ref: productRef,
+  //       quantity: qty,
+  //       amount: cost,
+  //       beneficiary: ""
+  //     }
+  //     const { data } = await axios.post('https://verdant-store.herokuapp.com/product/cart', config, details)
+  //     setCarts(data)
+  // }
+
+  useEffect(() => {
+    if(productId) {
+      dispatch(addToCart(productId, qty))
+    }
+  }, [dispatch, productId, qty])
+  
   const removeFromcartHandler = (id) => {
     dispatch(removeFromCart(id))
   }
 
   const checkoutHandler = () => {
-    history.push('/login?redirect=shipping')
+    if(!userInfo){
+      history.push('/login?redirect=shipping')
+    } else {
+      history.push(`/products/checkout?shipping/${productId}/${qty}`)
+    }
   }
   
 
@@ -37,7 +80,7 @@ const Cart = ({ match, location, history }) => {
     <div className="py-5">
       <Row className="py-4">
         <Col sm={12} md={12} lg={12} className="py-3">
-          <h6 style={{ fontSize: '18px', fontWeight: '500', fontWeight: '26.44' }}>Shipping Cart</h6>
+          <h6 style={{ fontSize: '18px', fontWeight: '500', fontWeight: '26.44' }}>Shopping Cart</h6>
         </Col>
       </Row>
 
@@ -67,7 +110,7 @@ const Cart = ({ match, location, history }) => {
                 <Row className="bg-white py-4" key={item.product}>
                   <Col md={6} className="py-4">
                     <div className="d-flex justify-space-between">
-                      <img src={item.image} alt="Cart Item Image" style={{ height:'200px', width: "300px" }} className="img-fluid" />
+                      <img src={item.image} alt="Cart Item Image" style={{ height:'300px', width: "300px" }} className="img-fluid" />
                       <div className="ml-4">
                         <p style={{ fontSize: '18px', fontWeight: '500' }} className="pt-5">{item.name}</p>
                       </div>

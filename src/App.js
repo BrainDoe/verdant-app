@@ -13,6 +13,7 @@ import InvoiceUpload from './components/products/invoiceUpload/InvoiceUpload';
 import Checkout from './components/products/checkout/Checkout';
 import Section from './components/layouts/section/Section';
 import About from './components/layouts/About';
+import React from 'react'
 import Login from './components/Login';
 import Signup from './components/Signup';
 import FAQ from './components/FAQ';
@@ -24,6 +25,7 @@ import SavedItems from './components/SavedItems';
 
 
 const  App = () => {
+
   return (
     <Router>
       <Header />
@@ -34,7 +36,7 @@ const  App = () => {
         <Route path="/signup" component={Signup}/>
         <Container>
           <Route path="/" component={Section} exact />
-          <Route path="/products/groceries/:ref" component={Groceries} />
+          <Route path="/products/groceries" component={Groceries} />
           
           <Route path="/groceries/:id" component={GroceryDetail} />
           <Route path="/cart/:id?" component={Cart} />

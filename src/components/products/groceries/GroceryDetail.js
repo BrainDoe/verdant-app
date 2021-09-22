@@ -9,8 +9,8 @@ import Message from './Message'
 import { Link } from 'react-router-dom';
 
 const GroceryDetail = ({ history, match }) => {
-  let [qty, setQty ] = useState(1)
 
+  let [qty, setQty ] = useState(1)
 
   const dispatch = useDispatch()
 

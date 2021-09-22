@@ -19,7 +19,7 @@ const Signup = ({history, location}) => {
   const [confirmPassword, setConfirmPassword] = useState('')
   const [message, setMessage] = useState(null)
 
-  const dispatch = useDispatch()
+  const dispatch = useDispatch({history})
 
   const userRegister = useSelector(state => state.userRegister)
   const { loading, error, userInfo } = userRegister
@@ -39,6 +39,7 @@ const Signup = ({history, location}) => {
       setMessage('Password do not match')
     } else {
       dispatch(register(firstname, lastname, email, phone, password))
+      history.push('/')
     }
   }
 

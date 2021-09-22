@@ -13,7 +13,7 @@ import GroceryProduct from './GroceryProduct'
 import Loader from './Loader'
 import Message from './Message'
 import { listProducts } from '../../../actions/productActions'
-import { getCategories } from '../../../actions/categoriesActions'
+// import { getCategories } from '../../../actions/categoriesActions'
 import { Link } from 'react-router-dom'
 
 
@@ -25,8 +25,8 @@ const Groceries = () => {
   const productList = useSelector(state => state.productList)
   const {loading, error, products} = productList 
 
-  const categoryItem = useSelector(state => state.categories)
-  const {categories} = categoryItem 
+  // const categoryItem = useSelector(state => state.categories)
+  // const {categories} = categoryItem 
 
   // const [products, setProduct] = useState([])
   const [productCategories, setProductCategories] = useState([])

@@ -1,10 +1,13 @@
-import React, { useState, useEffect } from 'react'
+import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { Col, Row } from 'react-bootstrap'
 import Loader from '../../products/groceries/Loader'
 import Message from '../../products/groceries/Message'
 import GroceryProduct from '../../products/groceries/GroceryProduct'
 import { listProducts } from '../../../actions/productActions'
+import OwlCarousel from 'react-owl-carousel';
+// import 'owl.carousel/dist/assets/owl.carousel.css';
+import 'owl.carousel/dist/assets/owl.carousel.css'
+import 'owl.carousel/dist/assets/owl.theme.default.css';
 
 const LatestProducts = () => {
 
@@ -19,20 +22,20 @@ const LatestProducts = () => {
     dispatch(listProducts())
 
   }, [dispatch])
-
+  
   return (
     <div>
       {loading ? <Loader /> : error ? <Message variant="danger">{error}</Message> : (
-        <Row>
+      <OwlCarousel className='owl-theme' loop margin={10} responsiveClass={true} responsive={0} items={3} nav>
           {products.map(product => (
-            <Col sm={12} md={4} key={product.id} className="mb-3 mx-auto">
               <GroceryProduct product={product} key={product.id} />
-            </Col>
           ))}             
-        </Row>
+      </OwlCarousel>
       )}
     </div>
   )
 }
+
+
 
 export default LatestProducts

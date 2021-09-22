@@ -26,6 +26,8 @@ const Groceries = ({match, location, history}) => {
   const productList = useSelector(state => state.productList)
   const {loading, error, products} = productList 
 
+  // const categoryItem = useSelector(state => state.categories)
+  // const {categories} = categoryItem 
 
   // const [products, setProduct] = useState([])
   const [productCategories, setProductCategories] = useState([])

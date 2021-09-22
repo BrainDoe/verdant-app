@@ -613,6 +613,27 @@ footer .btn-footer:hover {
   height: 200px !important;
 }
 
+.grid-remittance {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.grid-remittance .items {
+  border: 1px solid #3785f7 !important;
+  color: #fff;
+  position: relative;
+}
+
+ .card .remittanc-icon {
+  position: absolute;
+  top: -9%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+
+
 @media (max-width: 786px) {
 .grid-element {
    grid-template-columns: repeat(2, 1fr) !important;
@@ -823,26 +844,6 @@ text-align: center;
   display: inline-block;
   text-decoration: none;
 }
-
-/* .form-group input[type=submit] {
-  border: 1px solid #3785F724;
-  height: 54px;
-  width: 100%;
-  background-color: #3785f7;
-  color: #fff;
-  font-family: 'heebo' sans-serif;
-  font-weight: 500;
-  font-size: 18px;
-  border-radius: 5px;
-  padding: 0 10px;
-  margin-bottom: 15px;
-  transition: transform 0.5 ease;
-} */
-
-/* .form-group input[type=submit]:hover {
-  border: 2px solid #3785f7;
-  transform: scale(0.95);
-} */
 
 .or-container {
   display: flex;

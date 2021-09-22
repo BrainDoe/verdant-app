@@ -7,6 +7,10 @@ import { listProductDetails } from '../../../actions/productActions'
 import Loader from './Loader'
 import Message from './Message'
 import { Link } from 'react-router-dom';
+import OwlCarousel from 'react-owl-carousel';
+import 'owl.carousel/dist/assets/owl.carousel.css';
+import 'owl.carousel/dist/assets/owl.theme.default.css';
+import LatestProducts from '../../layouts/section/LatestProducts'
 
 const GroceryDetail = ({ history, match }) => {
 
@@ -111,8 +115,13 @@ const GroceryDetail = ({ history, match }) => {
                 <h6 style={{ fontSize: '20px', fontWeight: '500' }}>Other items you might like</h6>  
               </div>
 
-              <div class="owl-carousel">
-              <Card className="m-4 bg-white" style={{ width: '207', height: '185', borderRadius: '3px' }}>
+              <div className="card card-body">
+                <LatestProducts />
+              </div>
+
+               {/* <OwlCarousel className='owl-theme' loop margin={10} responsiveClass={true} items={2} nav>
+                <div className="items">
+                    <Card className="m-4 bg-white" style={{ width: '207', height: '185', borderRadius: '3px' }}>
                   <div className="py-3 px-3 bg-white">
                     <Link to={`/groceries/`} className="text-decoration-none">
                         <img src={image1} className="card-img" alt="Grocery Item" />
@@ -133,7 +142,8 @@ const GroceryDetail = ({ history, match }) => {
                     </div>
                   </div>
                 </Card>
-              </div>
+                </div>
+              </OwlCarousel> */}
             </Col>
           </Row>
         </div>
